@@ -1,1 +1,2 @@
-# gallery-de
+# gallery
+Gallery documentation
