@@ -1,850 +1,146 @@
-﻿<!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Konfigurieren von Profilen für die Zugriffssteuerung</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE GALERIE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/settings/">Galerie-Einstellungen</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Konfigurieren von Profilen für die Zugriffssteuerung</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Erstellen eines Portalerlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Erstellen eines In-Page-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Erste Schritte mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">Überblick über Gallerie-Erlebnisse</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erfahrungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">Portal <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Video Cloud-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Ändern des Player-Layouts</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Konfigurieren von Handlungsaufforderungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Konfigurieren von SEO-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Konfigurieren des Trackings</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Erstellung, Bearbeitung und Veröffentlichung von Portal-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Anpassen von Erscheinungsbild und Verhalten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Anpassen der Einstellungen für Katalogvorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Anpassen der Einstellungen für Chronicle-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Anpassen des Inhalts von Portalseiten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Anpassen der Marquee-Vorlageneinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Anpassen der Player- und Lead-Formulareinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Anpassen der Sitekonfiguration</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Anpassen der Site-Funktionen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Anpassen der Social-Media-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Anpassen der Video- und Wiedergabeeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Anpassen der Videoeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Herunterladen von Videos</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indizieren einer Portalerfahrung</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">Übersicht über Galerieportal-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">Verwenden von benutzerdefinierten Schriftarten</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">Auf Seite <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">Hinzufügen von Komponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Hinzufügen von Interaktionen</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Konfigurieren von Begleitkomponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Konfigurieren der Einstellungen für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Konfigurieren von Video-Downloads</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Erstellen benutzerdefinierter Themen</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">Anpassen einer In-Page-Erfahrung</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">Übersicht über In-Page Experience Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">Übersicht: Erstellen und Veröffentlichen von In-Page-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">Überprüfen von Analytics</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">Überprüfen von Anruf-zu-Action-Analysen</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">Überprüfung des Analytics-Dashboards</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">Verwenden von dynamischen Videoüberschreibungen</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">Live-Ereignis <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Hinzufügen von Pigeonhole zu einer Live-In-Page</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Hinzufügen einer Taubeneinstellung zu einem Live-Portal</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">Erstellen eines In-Page-Erlebnisses für Live-Events</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">Erstellen eines Live-Event-Portal-Erleb</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Erstellen des Status „Live Event“</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Erstellen des Status nach dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Erstellen des Status vor dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Anpassen der Live-Event-Portal-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">Landing-Page <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">Erstellen eines Landingpage-Erlebnisses</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Allgemein <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">Gallery Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Problembehandlung bei Problemen mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove Galerie-Cookies</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">Galerie-Einstellungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">Konfigurieren von Gallery-</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTube-Einstellungen konfigurieren</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">Konfigurieren von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Sichern eines Portalerlebnisses mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Sicherung eines Portalerlebnisses mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">Sicherung eines Portalerlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">Entwickler <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">Code-Snippets zur Vor-Ort-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">Benutzerdefinierte CSS-Referenz für In-Page Experi</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Einbetten von In-Page-Erlebnissen in ein CMS</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">Übersicht: API zur In-Page-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">Übersicht: In-Page Experience Client API</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">In-Page Experience API Fehlerreferenz</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">In-Page Experience Client-AP</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">Kurzanleitung: API für In-Page-Erlebnis-Plattform (REST)</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">API Referenz zur In-Page-Erfahrungsplattform</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">In-Page Experience Client-AP</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html">Schulung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Schulungskurse der Brightcove University</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">Gallerie Versions</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">Gallery-Vorlage Versionsh</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Konfigurieren von Zugriffskontrollprofilen
+parent: Gallery Settings
+description: In this topic you will learn how to configure access control profiles for a Gallery Portal Experience. You can control access based on IP address, single sign-on (SSO), or an access code.
+---
 
 <article class="bcls-article">
-  <h1>Konfigurieren von Profilen für die Zugriffssteuerung</h1>
-  <summary>In diesem Thema erfahren Sie, wie Sie Zugriffssteuerungsprofile für ein Gallery Portal Experience konfigurieren. Sie können den Zugriff basierend auf IP-Adresse, Single Sign-On (SSO) oder einem Zugangscode steuern.</summary>
+  <h1>Konfigurieren von Zugriffssteuerungsprofilen</h1>
+  <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <p>Wenn ein Gallery Portal Experience veröffentlicht wird, kann jeder mit der Website-URL standardmäßig auf die Website zugreifen. Zugriffssteuerungsprofile können erstellt werden, um den Zugriff auf ein Gallery Portal Experience einzuschränken. Profile für die Zugriffssteuerung werden unter den Gallery-Einstellungen erstellt, und anschließend werden die Profile den Websites zugewiesen. Profile für die Zugriffssteuerung können erstellt werden, um den Zugriff anhand der folgenden Faktoren einzuschränken:</p>
+    <p>Wenn eine Galerieportal-Erfahrung veröffentlicht wird, kann standardmäßig jeder mit der Site-URL auf die Site zugreifen. Zugriffssteuerungsprofile können erstellt werden, um den Zugriff auf eine Galerieportal-Erfahrung einzuschränken. Zugriffssteuerungsprofile werden als Teil der Galerieeinstellungen erstellt und anschließend den Profilen Sites zugewiesen. Zugriffssteuerungsprofile können erstellt werden, um den Zugriff basierend auf folgenden Einschränkungen einzuschränken:</p>
     <ul>
       <li><a href="#ip">IP Adresse</a></li>
-      <li><a href="#sso">Einmaliges Anmelden</a></li>
+      <li><a href="#sso">Einmalige Anmeldung</a></li>
       <li><a href="#accesscode">Zugangscode</a></li>
     </ul>
-    <p>Führen Sie die folgenden Schritte aus, um ein Profil für die Zugriffssteuerung zu erstellen:</p>
+    <p>Beachten Sie, dass eine Galerieportal-Erfahrung nur mit einem einzelnen Zugriffssteuerungsprofil konfiguriert werden kann. Jedes Zugriffssteuerungsprofil kann nur einen Zugriffsbeschränkungstyp haben. Beispielsweise ist es nicht möglich, ein Profil zu erstellen, das sowohl die IP-Adresse als auch einen Zugangscode verwendet. Wenn Single Sign-On verwendet wird, kann nur ein Identitätsanbieter pro Profil konfiguriert werden.</p>
+    <p>Gehen Sie folgendermaßen vor, um ein Zugriffssteuerungsprofil zu erstellen:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Öffnen Sie das Gallery-Modul.</li>
-      <li>Klicken Sie auf der Galerie-Homepage auf den Link <strong>Einstellungen</strong> .</li>
-      <li>Klicken Sie in der linken Navigationsleiste auf <strong>Profile der Zugriffssteuerung</strong>. Eine Liste der erstellten Zugriffssteuerungsprofile wird angezeigt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Liste der Profile" src="/assets/images/settings/node16450-access-control-list.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">Hinweis: Unter Umständen werden unter Ihrem Konto auch Profile für die Zugriffssteuerung angezeigt, die Sie nicht erstellt haben. Falls Sie IP-Beschränkungen, die Einzelanmeldung oder einen Zugriffscode für Websites konfiguriert haben, bevor für Gallery die Profile für die Zugriffssteuerung implementiert wurden, wurden diese Einstellungen bei der Freigabe der Funktion als Profile für die Zugriffssteuerung gespeichert.</aside>
+      <li>Öffnen Sie das Galerie-Modul.</li>
+      <li>Drücke den <strong>die Einstellungen</strong> Link auf der Galerie-Homepage.</li>
+      <li>Klicken Sie in der linken Navigation auf <strong>Zugriffssteuerungsprofile</strong>. Eine Liste der erstellten Zugriffssteuerungsprofile wird angezeigt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="profiles list" src="/assets/images/settings/node16450-access-control-list.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Möglicherweise werden in Ihrem Konto Zugriffssteuerungsprofile angezeigt, die Sie nicht erstellt haben. Wenn Sie IP-Beschränkungen, SSO oder einen Zugangscode für Site (s) konfiguriert hatten, bevor Gallery Zugriffssteuerungsprofile implementiert hat, wurden diese Einstellungen als Zugriffskontrollprofile gespeichert, als die Funktion freigegeben wurde.</aside>
       </li>
-      <li>Klicken Sie auf <strong>Create Profile</strong>.</li>
-      <li>Geben Sie dem Profil unter <strong>Name</strong> einen Namen.</li>
-      <li><strong>(Optional)</strong> Konfigurieren Sie <strong>Session Timeout</strong>, um die Dauer einer Benutzersitzung anzugeben. Einige Hinweise:
+      <li>Klicken <strong>Profil erstellen</strong>.</li>
+      <li>Geben Sie dem Profil ein <strong>Name</strong>.</li>
+      <li><strong>(Optional)</strong> Konfigurieren Sie a <strong>Session-Timeout</strong> um anzugeben, wie lange die Sitzung eines Benutzers dauern wird. Ein paar Anmerkungen:
         <ul>
-          <li>Diese Einstellung gilt bei Verwendung der Einzelanmeldung und von Zugriffscodes.</li>
-          <li>Es handelt sich um eine „Zeitüberschreitung aufgrund von Leerlauf“ (Idle Timeout). Bei jedem Zugriff auf den Gallery-Server (entweder durch das Laden einer Seite auf der Website oder einen API-Aufruf der Website) wird der Timer zurückgesetzt. Auf diese Weise können Zuschauer auch länger als für den angegebenen Zeitraum ununterbrochen surfen, aber sobald der Leerlaufzeitraum überschritten wird, werden sie abgemeldet. Während der Wiedergabe eines Videos wird aber nicht auf den Gallery-Server zugegriffen, sodass es ratsam ist, eine Zeitüberschreitungsdauer festzulegen, die länger als Ihr längstes Video ist.</li>
-          <li>Ihr Anbieter für die Einzelanmeldung (SSO) muss so eingestellt sein, dass entweder die erneute Authentifizierung erzwungen wird oder eine Sitzungszeitüberschreitung gewählt wird, die kürzer als unsere Zeitüberschreitung ist. Wenn dies nicht der Fall ist, leiten wir Sie nach unserer Zeitüberschreitung an Ihren SSO-Anbieter um, der sofort die Antwort ausgibt, dass der Benutzer angemeldet ist.</li>
+          <li>Diese Einstellung gilt bei Verwendung von SSO und Zugangscode</li>
+          <li>Dies ist eine "Leerlaufzeitüberschreitung". Immer wenn der Galerie-Server aufgerufen wird (entweder durch Laden einer Seite auf der Site oder durch einen API-Aufruf der Site), wird der Timer zurückgesetzt. Auf diese Weise können Zuschauer kontinuierlich länger als das angegebene Zeitlimit surfen. Sobald sie jedoch länger als das Zeitlimit inaktiv sind, werden sie abgemeldet. Während ein Video angesehen wird, wird jedoch nicht auf den Galerieserver zugegriffen, sodass der Zeitlimitwert länger sein sollte als Ihr längstes Video.</li>
+          <li>Ihr SSO-Anbieter muss so eingestellt sein, dass er entweder die erneute Authentifizierung erzwingt oder ein Sitzungszeitlimit aufweist, das unter unserem Zeitlimit liegt. Wenn dies nicht der Fall ist, werden wir nach Ablauf unserer Zeitüberschreitung zu Ihrem SSO-Anbieter weiterleiten und dieser gibt sofort eine Antwort aus, dass der Benutzer angemeldet ist.</li>
         </ul>
       </li>
-      <li>Wählen Sie die Optionen zum Schützen der Website aus:
+      <li>Wählen Sie die Option (en) aus, um die Site zu sichern. <strong>Es kann nur eine Option pro Zugriffssteuerungsprofil ausgewählt werden</strong>::
         <ul>
           <li><a href="#ip">IP Adresse</a></li>
-          <li><a href="#sso">Einmaliges Anmelden</a></li>
+          <li><a href="#sso">Einmalige Anmeldung</a></li>
           <li><a href="#accesscode">Zugangscode</a></li>
         </ul>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
-      <li>Erstellen Sie je nach Bedarf weitere Profile für die Zugriffssteuerung.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
+      <li>Erstellen Sie nach Bedarf zusätzliche Zugriffssteuerungsprofile.</li>
     </ol>
-    <p>Klicken Sie zum Bearbeiten oder Löschen eines Profils für die Zugriffssteuerung auf die Schaltfläche „Edit“ (<img alt="symbol bearbeiten" src="/assets/images/settings/node16450-edit-icon.png"/>) oder „Delete“ (<img alt="Symbol löschen" src="/assets/images/settings/node16450-delete-icon.png"/>), die dem Profil für die Zugriffssteuerung zugeordnet sind. Nachdem Profile für die Zugriffssteuerung erstellt wurden, können sie im Rahmen der Websiteeigenschaften einer Website zugewiesen werden. Weitere Informationen finden Sie unter <a href="/experiences/portal/controlling-access-portal-experience.html">Steuern des Zugriffs auf ein Portalerlebnis</a>.</p>
+    <p>Um ein Zugriffskontrollprofil zu bearbeiten oder zu löschen, klicken Sie auf das Bearbeiten (<img alt="edit icon" src="/assets/images/settings/node16450-edit-icon.png" />) oder löschen (<img alt="delete icon" src="/assets/images/settings/node16450-delete-icon.png" />) Schaltflächen, die dem Zugangskontrollprofil zugeordnet sind. Sobald Zugriffssteuerungsprofile erstellt wurden, können sie als Teil der Site-Eigenschaften einer Site zugewiesen werden. Weitere Informationen finden Sie unter <a href="/experiences/portal/controlling-access-portal-experience.html">Steuern des Zugriffs auf eine Portal-Erfahrung</a>.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="ip">Konfigurieren der IP-Beschränkung</h2>
-    <p>Beim Erstellen eines Profils für die Zugriffssteuerung, für das eine IP-Beschränkung verwendet wird, erhalten Zuschauer mit einer IP-Adresse außerhalb des vordefinierten Bereichs einen Fehler, wenn sie auf die Website zugreifen möchten.</p>
-    <p>Führen Sie die folgenden Schritte aus, um für ein Profil für die Zugriffssteuerung IP-Beschränkungen zu konfigurieren:</p>
+    <h2 id="ip">IP-Einschränkung konfigurieren</h2>
+    <p>Beim Erstellen eines Zugriffssteuerungsprofils mit IP-Einschränkung erhalten Betrachter mit einer IP-Adresse außerhalb des vordefinierten Bereichs eine Fehlermeldung, wenn sie versuchen, auf die Site zuzugreifen.</p>
+    <p>Gehen Sie folgendermaßen vor, um ein Zugriffssteuerungsprofil für die Verwendung von IP-Einschränkungen zu konfigurieren:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Wählen Sie die Option <strong>Limited by IP address</strong>.</li>
-      <li>Geben Sie den Bereich der IP-Adressen ein, die auf die Website zugreifen können. <a href="http://tools.ietf.org/html/rfc4632">CIDR-Block-Notation</a> wird ebenfalls unterstützt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Konfigurieren Sie die IP-Adresse" src="/assets/images/settings/node16450-ip-address.png"/></figure>
+      <li>Wähle aus <strong>Begrenzt durch die IP-Adresse </strong> Möglichkeit.</li>
+      <li>Geben Sie einen Bereich von IP-Adressen ein, die auf die Site zugreifen können. <a href="http://tools.ietf.org/html/rfc4632">CIDR-Blocknotation</a> wird ebenfalls unterstützt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure ip address" src="/assets/images/settings/node16450-ip-address.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="sso">Konfigurieren der Einzelanmeldung</h2>
-    <p>Beim Erstellen eines Profils für die Zugriffssteuerung, für das die Einzelanmeldung (SSO) verwendet wird, werden Besucher der Website aufgefordert, sich mit gültigen Anmeldeinformationen anzumelden, bevor sie auf die Website zugreifen können. Gallery unterstützt den Standard Security Assertion Markup Language 2.0 (SAML 2.0) für den Austausch von Authentifizierungs- und Autorisierungsdaten zwischen Sicherheitsdomänen.</p>
-    <p>Gallery unterstützt die meisten großen Identity Provider, darunter:</p>
+    <h2 id="sso">Single Sign-On konfigurieren</h2>
+    <p>Wenn Sie ein Zugriffssteuerungsprofil erstellen, das SSO verwendet, werden Site-Besucher aufgefordert, sich mit gültigen Anmeldeinformationen anzumelden, bevor sie auf die Site zugreifen können. Gallery unterstützt den Standard Security Assertion Markup Language 2.0 (SAML 2.0) zum Austausch von Authentifizierungs- und Autorisierungsdaten zwischen Sicherheitsdomänen.</p>
+    <p>Gallery unterstützt die meisten wichtigen Identitätsanbieter, darunter:</p>
     <ul>
-      <li>Ping</li>
+      <li>Klingeln</li>
       <li>OneLogin</li>
-      <li>ADFS 2,0 /3,0</li>
-      <li>Google-G-Suite</li>
+      <li>ADFS 2.0/3.0</li>
+      <li>Google G Suite</li>
       <li>Shibboleth</li>
-      <li>Okta-A</li>
+      <li>Okta</li>
       <li>Salesforce.com</li>
     </ul>
-    <p>Andere Anbieter, die den SAML 2.0-Standard verwenden, werden ebenfalls funktionieren. Gallery verwendet die <a href="https://github.com/bergie/passport-saml">Passport-saml-Bibliothek</a> . Gallery unterstützt keine Identity Provider, die nicht mit dieser Bibliothek arbeiten.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Gallery erfordert SAML 2.0 für die Authentifizierung mittels Einzelanmeldung. SAML 1.1 wird nicht unterstützt.</aside>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Wir unterstützen nur Einzelbytezeichen.</aside>
-    <p>Ihr SSO-Anbieter benötigt eine ACS-URL (Assertion Consumer Service URL). Die ACS-URL ist im Abschnitt „SSO“ der Tabelle mit den Profilen für die Zugriffssteuerung aufgeführt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="acs-url" src="/assets/images/settings/node16450-acs-url.png"/></figure>
-    <p>Die ACS-URL ist standardmäßig auf <code translate="No">https://auth.bcvp0rtal.com/login/callback</code>. Sie können anstelle der ACS-URL auch Ihre eigene URL angeben. Beide Optionen können zum Konfigurieren von strengeren SSO-Anbietern verwendet werden. Für vorhandene Websites funktioniert <code translate="No">http(s)://&lt;site-root-url&gt;/login/callback</code> auch weiterhin, aber Brightcove empfiehlt Publishern die Verwendung von <code translate="No">https://auth.bcvp0rtal.com/login/callback</code>. Dieser Endpunkt leitet die SAML-Daten für alle Websites, die einen Pfad in einer Domäne nutzen, an die richtige Website weiter.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Bei Verwendung eines IdP-initiierten SSO-Workflows sollte die in Ihrer SSO-Software angegebene ACS-URL auf eine Gallery-Website verweisen, die mit diesem Zugriffssteuerungsprofil konfiguriert ist. In diesem Fall sollte die <code translate="No">https://auth.bcvp0rtal.com/login/callback</code> URL nicht verwendet werden.</aside>
-    <p>Führen Sie die folgenden Schritte aus, um für ein Profil für die Zugriffssteuerung die Einzelanmeldung zu konfigurieren:</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="sso konfigurieren" src="/assets/images/settings/node16450-sso.png"/></figure>
+    <p>Andere Anbieter, die den SAML 2.0-Standard verwenden, werden ebenfalls arbeiten. Galerie verwendet die <a href="https://github.com/bergie/passport-saml">Pass-Saml</a> Bibliothek. Gallery unterstützt keine Identitätsanbieter, die mit dieser Bibliothek nicht funktionieren.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Gallery benötigt SAML 2.0 für die Single Sign-On-Authentifizierung. SAML 1.1 wird nicht unterstützt.</aside> <aside class="bcls-aside bcls-aside--information">Hinweis: Wir unterstützen nur Einzelbyte-Zeichen.</aside> <aside class="bcls-aside bcls-aside--information">Hinweis: Gallery unterstützt nur vom Identitätsanbieter initiierte (IDP) SAML-Flows. Vom Service Provider initiierte Flows werden nicht unterstützt.</aside>
+    <p>Ihr SSO-Anbieter benötigt eine ACS-URL (Assertion Consumer Service URL). Die ACS-URL wird im Abschnitt SSO der Tabelle Zugriffssteuerungsprofile aufgeführt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="acs url" src="/assets/images/settings/node16450-acs-url.png" /></figure>
+    <p>Die ACS-URL lautet standardmäßig <code translate="No">https://auth.bcvp0rtal.com/login/callback</code>. Sie können die ACS-URL auch überschreiben, indem Sie Ihre eigene URL angeben. Beide Optionen können zum Konfigurieren strengerer SSO-Anbieter verwendet werden. Für vorhandene Websites <code translate="No">http(s)://&lt;site-root-url&gt;/login/callback</code> wird weiterhin funktionieren, aber Brightcove empfiehlt die Verwendung durch Publisher <code translate="No">https://auth.bcvp0rtal.com/login/callback</code>. Dieser Endpunkt sorgt dafür, dass SAML-Daten für alle Sites, die einen Pfad in einer Domäne verwenden, an die richtige Site weitergeleitet werden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Bei Verwendung eines IDP-initiierten SSO-Workflows sollte die in Ihrer SSO-Software angegebene ACS-URL auf eine Galerie-Site verweisen, die mit diesem Zugriffssteuerungsprofil konfiguriert ist. In diesem Fall sollte die <code translate="No">https://auth.bcvp0rtal.com/login/callback</code> URL nicht verwendet werden.</aside>
+    <p>Gehen Sie folgendermaßen vor, um ein Zugriffssteuerungsprofil für die Verwendung von SSO zu konfigurieren:</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure sso" src="/assets/images/settings/node16450-sso.png" /></figure>
     <ol class="bcls-tasklist-restart">
-      <li>Wählen Sie die Option <strong>SSO</strong>.</li>
-      <li>Wenn Sie über eine Exportdatei mit Ihren SAML 2.0-Metadaten verfügen, können Sie auf <strong>Select File</strong> klicken, um nach der Metadatendatei zu suchen und sie auszuwählen. Die Felder <strong>SAML 2.0 Endpoint</strong> und <strong>X.509 Certificate</strong> werden ausgefüllt.</li>
-      <li>Geben Sie für <strong>SAML 2.0 Endpoint (HTTP)</strong> einen Wert ein. Diesen Wert erhalten Sie von Ihrem SAML-Anbieter.</li>
-      <li>Geben Sie einen Wert für <strong>X.509 Certificate</strong> ein. Diesen Wert erhalten Sie von Ihrem SAML-Anbieter.</li>
-      <li>(Optional) Geben Sie einen Wert für <strong>SAML Issuer/Entity ID Override</strong> ein. Geben Sie hier einen Wert ein, um den SAML-Aussteller wahlweise zu überschreiben.</li>
-      <li>(Optional) Geben Sie einen Wert für <strong>ACS URL Override</strong> ein. Geben Sie hier einen Wert ein, falls Sie die ACS-URL überschreiben möchten.</li>
-      <li>(Optional) Geben Sie die <strong>SAML-AuthnContext-Überschreibung</strong>ein. Geben Sie hier einen Wert ein, um den SAML AuthNContext optional zu überschreiben.</li>
-      <li>(Optional) Geben Sie SAML-Attribute an, die Sie für Ihr externes JavaScript verwenden möchten.</li>
-      <li>(Optional) Aktivieren Sie die Option <strong>Expose all attributes</strong>, um alle SAML-Attribute für die Verwendung in externem JavaScript verfügbar zu machen.</li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Wähle aus <strong>SSO </strong> Möglichkeit.</li>
+      <li>Wenn Sie eine Exportdatei Ihrer SAML 2.0-Metadaten haben, klicken Sie auf Datei <strong>auswählen,</strong> um die Metadatendatei zu durchsuchen und auszuwählen. Dies wird die <strong>SAML 2.0-Endpunkt</strong> und der <strong>X.509-Zertifikat</strong> Felder.</li>
+      <li>Geben Sie einen Wert für den <strong>SAML 2.0 Endpoint (HTTP) ein</strong>. Dieser Wert sollte bei Ihrem SAML-Anbieter erhältlich sein.</li>
+      <li>Geben Sie einen Wert für die ein <strong> X.509-Zertifikat</strong>. Dieser Wert sollte bei Ihrem SAML-Anbieter erhältlich sein.</li>
+      <li>(Optional) Geben Sie die ein <strong>Überschreiben der SAML-Aussteller- / Entitäts-ID</strong>. Geben Sie hier einen Wert ein, um den SAML-Aussteller optional zu überschreiben.</li>
+      <li>(Optional) Geben Sie die ein<strong> ACS-URL überschreiben</strong>. Geben Sie hier einen Wert ein, um optional die ACS-URL zu überschreiben.</li>
+      <li>(Optional) Geben Sie die ein <strong>SAML AuthnContext Override</strong>. Geben Sie hier einen Wert ein, um optional den SAML AuthnContext zu überschreiben.</li>
+      <li>(Optional) Deaktivieren Sie die Option <strong>Standard AuthnContext</strong>. Standardmäßig sendet Gallery für SSO-Profile PasswordProtectedTransport als SAML-Authentifizierungskontext. Manchmal wird dies von den Identitätsanbietern nicht unterstützt. Wenn diese Option aktiviert ist, sendet Gallery die Authentifizierungskontextanforderung nicht.</li>
+      <li>(Optional) Geben Sie alle SAML-Attribute ein, die an Ihr externes JavaScript übergeben werden sollen.</li>
+      <li>(Optional) Überprüfen <strong>Legen Sie alle Attribute offen</strong> um alle SAML-Attribute für die Verwendung in externem JavaScript verfügbar zu machen.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="accesscode">Konfigurieren eines Zugriffscodes</h2>
-    <p>Wenn auf einer Website ein Zugangscode angewendet wird, werden die Zuschauer beim Zugriff auf die Website-URL aufgefordert, den richtigen Zugangscode anzugeben.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Eingabeaufforderung für den" src="/assets/images/settings/node16450-access-code-prompt.png"/></figure>
-    <p>Wenn ein falscher Zugriffscode eingegeben wird, erhält der Benutzer einen Fehler. Zugriffscodes eignen sich gut zum Beschränken des Zugriffs, während sich eine Website im Aufbau befindet. Zugriffscodes bieten keine Sicherheit oder Authentifizierung für die Website.</p>
-    <p>Führen Sie die folgenden Schritte aus, um für ein Profil für die Zugriffssteuerung die Nutzung eines Zugriffscodes zu konfigurieren:</p>
+    <h2 id="accesscode">Zugangscode konfigurieren</h2>
+    <p>Wenn auf eine Site ein Zugangscode angewendet wird, werden die Betrachter aufgefordert, beim Zugriff auf die Site-URL den richtigen Zugangscode anzugeben.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="access code prompt" src="/assets/images/settings/node16450-access-code-prompt.png" /></figure>
+    <p>Wenn ein falscher Zugangscode eingegeben wird, erhält der Viewer eine Fehlermeldung. Zugangscodes sind eine gute Möglichkeit, den Zugriff auf eine Site während der Erstellung einzuschränken. Zugangscodes bieten keine Site-Sicherheit oder Authentifizierung.</p>
+    <p>Gehen Sie folgendermaßen vor, um ein Zugriffssteuerungsprofil für die Verwendung eines Zugriffscodes zu konfigurieren:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Wählen Sie die Option <strong>Require Access Code</strong>.</li>
-      <li>Geben Sie den <strong>Zugangscode</strong> für die Site ein.</li>
-      <li>Geben Sie das <strong>Zugangscode-Etikett</strong>ein Das <strong>Zugangscode-Etikett</strong> wird oben angezeigt, wo der Benutzer seinen Zugangscode eingeben wird.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Konfigurieren des Zugangscodes" src="/assets/images/settings/node16450-access-code1.png"/></figure>
+      <li>Wähle aus <strong>Zugangscode erforderlich </strong> Möglichkeit.</li>
+      <li>Geben Sie die <strong>Zugangscode</strong> für die Website.</li>
+      <li>Geben Sie die <strong>Zugangscode-Etikett</strong>. Das <strong>Zugangscode-Etikett</strong> wird oben angezeigt, wo der Benutzer seinen Zugangscode eingibt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure access code" src="/assets/images/settings/node16450-access-code1.png" /></figure>
       </li>
-      <li>(Optional) <a href="#style">Gestalten Sie die Zugriffssteuerungsseite</a>.</li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>(Optional) <a href="#style">Gestalten Sie die Zugriffskontrollseite</a>.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="style">Styling der Zugriffskontrollseite</h2>
-    <p>Die Zugriffssteuerungsseite kann so gestaltet werden, dass sie dem Erscheinungsbild Ihrer gesamten Website besser entspricht. Gallery bietet drei Styling-Optionen:</p>
+    <h2 id="style">Gestalten der Zugriffskontrollseite</h2>
+    <p>Die Zugriffskontrollseite kann so gestaltet werden, dass sie besser zum Erscheinungsbild Ihrer gesamten Website passt. Die Galerie bietet drei Styling-Optionen:</p>
     <ul>
-      <li><a href="#defaultstyle">Default</a></li>
-      <li><a href="#imageborder">Bild &amp; Border</a></li>
+      <li><a href="#defaultstyle">Standard</a></li>
+      <li><a href="#imageborder">Bild &amp; Rand</a></li>
       <li><a href="#custom">Benutzerdefiniert</a></li>
     </ul>
     <h3 id="defaultstyle">Standard-Styling</h3>
-    <p>Mit der Standard-Styling-Option werden immer ein Galerie-Logo, das Zugangscode-Label und ein Zugangscodefeld angezeigt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Eingabeaufforderung für den" src="/assets/images/settings/node16450-access-code-prompt.png"/></figure>
-    <h3 id="imageborder">Bild- und Randgestaltung</h3>
-    <p>Die Option Bild &amp; Rahmen ermöglicht einige grundlegende Anpassungen der Zugriffskontrollseite. Ein Beispiel kann unten gesehen werden.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Beispiel für Bildränder" src="/assets/images/settings/node16450-image-border-example.png"/></figure>
-    <p>Gehen Sie folgendermaßen vor, um das Bild- und Rahmendesign anzupassen:</p>
+    <p>Bei der Standard-Styling-Option werden immer ein Galerie-Logo, das Zugangscode-Etikett und ein Zugangscode-Feld angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="access code prompt" src="/assets/images/settings/node16450-access-code-prompt.png" /></figure>
+    <h3 id="imageborder">Bild- und Randstyling</h3>
+    <p>Die Option Bild &amp; Rahmen ermöglicht einige grundlegende Anpassungen der Zugriffskontrollseite. Ein Beispiel ist unten zu sehen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="image border example" src="/assets/images/settings/node16450-image-border-example.png" /></figure>
+    <p>Gehen Sie folgendermaßen vor, um das Bild- und Rahmenformat anzupassen:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Wählen Sie <strong>Bild &amp; Rahmen</strong>aus.</li>
-      <li>Ziehen Sie das Bild per Drag &amp; Drop, durchsuchen Sie ihn oder fügen Sie einen Link hinzu, der auf der Zugriffskontrollseite angezeigt wird.</li>
-      <li>Geben Sie eine <strong>Clickthrough-URL ein</strong>. Die <strong>Clickthrough-URL</strong> macht das Bild zu einem anklickbaren Link.</li>
-      <li>Klicken Sie auf den Farbwähler, um eine <strong>Kopfzeilenrandfarbe</strong>auszuwählen.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Bildrand Eigenschaften" src="/assets/images/settings/node16450-image-border-props.png"/></figure>
+      <li>Wählen <strong>Bild &amp; Rand</strong>.</li>
+      <li>Ziehen Sie das Bild per Drag &amp; Drop, durchsuchen Sie es oder fügen Sie einen Link zum Bild hinzu, das auf der Zugriffskontrollseite angezeigt werden soll.</li>
+      <li>Geben Sie ein <strong>Klick-URL</strong>. Das <strong>Klick-URL</strong> macht das Bild zu einem anklickbaren Link.</li>
+      <li>Klicken Sie auf den Farbwähler, um a auszuwählen <strong>Header-Rahmenfarbe</strong>.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="image border properties" src="/assets/images/settings/node16450-image-border-props.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
-    <h3 id="custom">Benutzerdefiniertes Sty</h3>
-    <p>Die Option <strong>Benutzerdefiniertes</strong> Styling ermöglicht erweiterte Anpassungen der Zugriffskontrollseite. Ein Beispiel kann unten gesehen werden.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="benutzerdefiniertes Beispiel" src="/assets/images/settings/node16450-custom-example.png"/></figure>
-    <p>Gehen Sie folgendermaßen vor, um die Option <strong>Benutzerdefiniert</strong> zu verwenden:</p>
+    <h3 id="custom">Benutzerdefiniertes Styling</h3>
+    <p>Das <strong>Benutzerdefiniert</strong> Die Styling-Option ermöglicht erweiterte Anpassungen der Zugriffskontrollseite. Ein Beispiel ist unten zu sehen.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="custom example" src="/assets/images/settings/node16450-custom-example.png" /></figure>
+    <p>So verwenden Sie die <strong>Benutzerdefiniert</strong> Option, folgen Sie diesen Schritten:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Wählen Sie<strong> Benutzerdefiniert</strong>.</li>
+      <li>Wählen<strong> Benutzerdefiniert</strong>.</li>
       <li>Geben Sie benutzerdefiniertes HTML für die Kopf- und Fußzeile ein.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="benutzerdefinierte Eigenschaften" src="/assets/images/settings/node16450-custom-props.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="custom properties" src="/assets/images/settings/node16450-custom-props.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Speichern</strong></li>
+      <li>Klicken <strong>speichern</strong></li>
     </ol>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove Support-Service</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">Systemstatus</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Schulungen</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove Universität</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

@@ -1,923 +1,219 @@
-﻿<!doctype html>
-<html lang="de">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  
-  <title>Erstellen eines In-Page-Erlebnisses für Live-Events</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">  
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
-  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
-  <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
-  <script src="/assets/js/sajari-head.js"></script>
-</head>
-
-<body class="body">
-
-<header>
-  <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE GALERIE<sup>™</sup></span></a>
-<!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
-
-<script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
-</script>
-
-    
-
-
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
-    
-  </div>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb arr-right">
-      
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
-      
-      
-      
-      <li class="breadcrumb-item"><a href="/experiences/live/">Live-Veranstaltung</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">Erstellen eines In-Page-Erlebnisses für Live-Events</li>
-    </ol>
-  </nav>
-</header>
-<div class="container">
-    <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
-        <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Erstellen eines Portalerlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Erstellen eines In-Page-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Erste Schritte mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">Überblick über Gallerie-Erlebnisse</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erfahrungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">Portal <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Video Cloud-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Ändern des Player-Layouts</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Konfigurieren von Handlungsaufforderungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Konfigurieren von SEO-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Konfigurieren des Trackings</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Erstellung, Bearbeitung und Veröffentlichung von Portal-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Anpassen von Erscheinungsbild und Verhalten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Anpassen der Einstellungen für Katalogvorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Anpassen der Einstellungen für Chronicle-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Anpassen des Inhalts von Portalseiten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Anpassen der Marquee-Vorlageneinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Anpassen der Player- und Lead-Formulareinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Anpassen der Sitekonfiguration</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Anpassen der Site-Funktionen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Anpassen der Social-Media-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Anpassen der Video- und Wiedergabeeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Anpassen der Videoeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Herunterladen von Videos</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indizieren einer Portalerfahrung</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">Übersicht über Galerieportal-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">Verwenden von benutzerdefinierten Schriftarten</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">Auf Seite <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">Hinzufügen von Komponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Hinzufügen von Interaktionen</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Konfigurieren von Begleitkomponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Konfigurieren der Einstellungen für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Konfigurieren von Video-Downloads</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Erstellen benutzerdefinierter Themen</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">Anpassen einer In-Page-Erfahrung</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">Übersicht über In-Page Experience Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">Übersicht: Erstellen und Veröffentlichen von In-Page-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">Überprüfen von Analytics</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">Überprüfen von Anruf-zu-Action-Analysen</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">Überprüfung des Analytics-Dashboards</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">Verwenden von dynamischen Videoüberschreibungen</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">Live-Ereignis <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Hinzufügen von Pigeonhole zu einer Live-In-Page</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Hinzufügen einer Taubeneinstellung zu einem Live-Portal</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">Erstellen eines In-Page-Erlebnisses für Live-Events</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">Erstellen eines Live-Event-Portal-Erleb</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Erstellen des Status „Live Event“</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Erstellen des Status nach dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Erstellen des Status vor dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Anpassen der Live-Event-Portal-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">Landing-Page <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">Erstellen eines Landingpage-Erlebnisses</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Allgemein <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">Gallery Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Problembehandlung bei Problemen mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove Galerie-Cookies</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">Galerie-Einstellungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">Konfigurieren von Gallery-</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTube-Einstellungen konfigurieren</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">Konfigurieren von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Sichern eines Portalerlebnisses mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Sicherung eines Portalerlebnisses mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">Sicherung eines Portalerlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">Entwickler <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">Code-Snippets zur Vor-Ort-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">Benutzerdefinierte CSS-Referenz für In-Page Experi</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Einbetten von In-Page-Erlebnissen in ein CMS</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">Übersicht: API zur In-Page-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">Übersicht: In-Page Experience Client API</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">In-Page Experience API Fehlerreferenz</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">In-Page Experience Client-AP</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">Kurzanleitung: API für In-Page-Erlebnis-Plattform (REST)</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">API Referenz zur In-Page-Erfahrungsplattform</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">In-Page Experience Client-AP</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html">Schulung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Schulungskurse der Brightcove University</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">Gallerie Versions</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">Gallery-Vorlage Versionsh</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
-              </ul>
-            
-          
-      </nav>
-    </div>
-    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
-  <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
-
-<!-- search bar -->
-<div id="nav-search-box" style="margin-top: 1rem;"></div>
-<!-- in-page navigation for narrow screens -->
-<details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
-  <nav id="centered_toc"></nav>
-  <ul id="centered_in_page_toc" class="list-none"></ul>
-</details>
-<!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
+---
+title: Erstellen einer Live-Event-In-Page-Erfahrung
+parent: Live Event 
+grandparent: Experiences
+description: In this topic you will learn how to customize the content of a Live Event In-Page Experience.
+---
 
 <article class="bcls-article">
-  <h1>Erstellen eines In-Page-Erlebnisses für Live-Events</h1>
-  <summary>In diesem Thema erfahren Sie, wie Sie den Inhalt eines In-Page-Erlebnisses für Live-Events anpassen können.</summary>
+  <h1>Erstellen einer Live-Event-In-Page-Erfahrung</h1>
+  <summary>{{ page.description }}</summary>
   <section class="bcls-section">
-    <p>Gallery bietet eine In-Page-Vorlage für Live-Events, die verwendet werden kann, um Live-Events im Rahmen eines In-Page Experience zu liefern. Brightcove bietet verschiedene Optionen zur Übertragung von Live-Streams. Eine Liste aller Optionen finden Sie unter <a href="https://live.support.brightcove.com/get-started/delivering-live-streams.html">Bereitstellen von Live-Streams</a> . Eine detaillierte Reihe von Schritten zur Verwendung des Live-Moduls zur Übertragung eines Live-Events finden Sie unter:</p>
+    <p>Die Galerie bietet eine In-Page-Vorlage für Live-Ereignisse, mit der Live-Ereignisse im Rahmen einer In-Page-Erfahrung bereitgestellt werden können. Brightcove bietet zahlreiche Optionen für die Bereitstellung von Live-Streaming-Videos. Sehen <a href="https://live.support.brightcove.com/get-started/delivering-live-streams.html">Live-Streams bereitstellen</a> für eine Liste aller Optionen. Ausführliche Informationen zur Verwendung des Live-Moduls zum Übertragen eines Live-Ereignisses finden Sie unter:</p>
     <ul>
       <li> <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html">Schritt für Schritt: Verwenden des Live-Moduls mit Telestream Wirecast</a></li>
       <li><a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html">Schritt für Schritt: Verwenden des Live-Moduls mit Open Broadcaster Software (OBS)</a></li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: In-Page-Erlebnisse bei Live-Events spielen automatisch in Desktop-Browsern ab, auch wenn der Player so konfiguriert ist, dass er nicht automatisch abgespielt wird. Das ist von Grund auf. Die Galerie zwingt den Spieler zum Spielen, sobald der Countdown abgeschlossen ist, sodass Benutzer, die auf die Seite sitzen und auf den Start des Events warten, sie ansehen können, ohne erneut auf Play klicken zu müssen. In-Page-Erlebnisse bei Live-Events werden nicht automatisch auf iOS- oder Android-Geräten abgespielt.</aside>
-    <p>Um ein neues In-Page-Erlebnis für Live-Events zu erstellen, erstellen Sie ein neues In-Page-Erlebnis und wählen Sie die <strong>In-Page-Vorlage für Live-Events </strong>aus.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Live-Event-In-Page-Erlebnisse werden in Desktop-Browsern automatisch wiedergegeben, selbst wenn der Player so konfiguriert ist, dass er nicht automatisch wiedergegeben wird. Dies ist beabsichtigt. Die Galerie zwingt den Spieler zum Spielen, sobald der Countdown abgeschlossen ist, sodass Benutzer, die auf der Seite sitzen und auf den Beginn des Ereignisses warten, das Spiel ansehen können, ohne erneut auf Wiedergabe klicken zu müssen. Live-Ereignis-In-Page-Erlebnisse werden auf iOS- oder Android-Geräten nicht autoplay.</aside>
+    <p>Um eine neue In-Page-Erfahrung für Live-Ereignisse zu erstellen, erstellen Sie eine neue In-Page-Erfahrung und wählen Sie die Option aus <strong>Live Event In-Page </strong>Vorlage.</p>
     <p>Die In-Page-Vorlage für Live-Ereignisse enthält einige Einstellungen und Inhaltselemente, die in den anderen In-Page Experience-Vorlagen nicht vorhanden sind.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Live-IPX-Vorlage" src="/assets/images/experiences/live/node18545-live-ipx.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="live ipx template" src="/assets/images/experiences/live/node18545-live-ipx.png" /></figure>
     <ol>
-      <li><a href="#now_showing">Wird jetzt den Zuschauern angezeigt</a></li>
-      <li><a href="#event_state">Status der Live-Veranstaltung</a></li>
-      <li><a href="#social">Soziales Teilen</a></li>
-      <li><a href="#image_placeholder">Bild-Platzhalter</a></li>
-      <li><a href="#countdown">Countdown der Veranstaltung</a></li>
-      <li><a href="#text_placeholder">Platzhalter für Text</a></li>
-      <li><a href="#reminder">Kalender-Erinnerung</a></li>
+      <li><a href="#now_showing">Jetzt den Zuschauern anzeigen</a></li>
+      <li><a href="#event_state">Live-Ereignisstatus</a></li>
+      <li><a href="#social">Social Sharing</a></li>
+      <li><a href="#image_placeholder">Platzhalter fuer Bild</a></li>
+      <li><a href="#countdown">Ereignis-Countdown</a></li>
+      <li><a href="#text_placeholder">Textplatzhalter</a></li>
+      <li><a href="#reminder">Kalendererinnerung</a></li>
       <li><a href="#videos_placeholder">Platzhalter für Videos</a></li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="now_showing">Wird jetzt den Zuschauern angezeigt</h2>
-    <p>Die Einstellung „ <strong>Jetzt wird den Betrachtern angezeigt</strong> “ wird verwendet, um zu konfigurieren, welcher <a href="#event_state">Live-Ereignisstatus</a> den Zuschauern angezeigt wird.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Live-IPX-Vorlage" src="/assets/images/experiences/live/node18545-now-showing-setting.png"/></figure>
-    <p>Klicken Sie auf <strong>Ändern</strong> und wählen Sie den Status aus, der angezeigt werden soll. Nach der Änderung dieser Einstellung muss die Erfahrung NICHT erneut veröffentlicht werden, es kann jedoch eine Minute dauern, bis die Statusänderung auf der Produktionsstätte erscheint.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Auswahldialog für den Ereignisstatus" src="/assets/images/experiences/live/node18545-now-showing-dialog.png"/></figure>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Sie, der Herausgeber, sind dafür verantwortlich, den Status des Live-Ereignisses zu ändern. Die Galerie wird niemals automatisch den Status des Live-Ereignisses wechseln.</aside>
+    <h2 id="now_showing">Jetzt den Zuschauern anzeigen</h2>
+    <p>Das <strong>Jetzt den Zuschauern anzeigen</strong> Einstellung wird verwendet, um zu konfigurieren, welche <a href="#event_state">Live-Event-Status</a> wird den Zuschauern angezeigt. Sie als Herausgeber sind dafür verantwortlich, den Status des Live-Ereignisses zu ändern. Die Galerie wechselt niemals automatisch den Status des Live-Ereignisses.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="live ipx template" src="/assets/images/experiences/live/node18545-now-showing-setting.png" /></figure>
+    <p>Klicken <strong>Veränderung</strong> und wählen Sie den Status aus, der angezeigt werden soll. Nach dem Ändern dieser Einstellung muss die Erfahrung NICHT erneut veröffentlicht werden.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="event state selection dialog" src="/assets/images/experiences/live/node18545-now-showing-dialog.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Es kann einige Minuten dauern, bis die Statusänderung auf der Produktionsstätte angezeigt wird.</aside>
   </section>
   <section class="bcls-section">
-    <h2 id="event_state">Live-Event-Staaten</h2>
-    <p>Die Erfahrungszustände für ein Live-Event In-Page Experience unterscheiden sich von den anderen In-Page Experience-Typen. Das Erscheinungsbild jedes dieser Zustände kann durch Klicken auf die Links oben auf der Seite angepasst werden.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Live-Event-Staaten" src="/assets/images/experiences/live/node18545-live-event-states.png"/></figure>
-    <p>Live-Event In-Page Experiences haben die folgenden Zustände:</p>
+    <h2 id="event_state">Live-Ereigniszustände</h2>
+    <p>Die Erfahrungsstatus für eine Live-Event-In-Page-Erfahrung unterscheiden sich von den anderen In-Page-Erfahrungstypen. Das Erscheinungsbild jedes dieser Zustände kann durch Klicken auf die Links oben auf der Seite angepasst werden.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="live event states" src="/assets/images/experiences/live/node18545-live-event-states.png" /></figure>
+    <p>Live-Event In-Page-Erlebnisse haben folgende Zustände:</p>
     <ul>
-      <li><strong>PRE-EVENT</strong> - Wie das Live-Erlebnis vor Beginn des Live-Events erscheinen wird</li>
-      <li><strong>LIVE</strong> - Wie das Erlebnis während des Live-Events erscheinen wird</li>
-      <li><strong>POST EVENT</strong> - Wie das Erlebnis erscheinen wird, wenn das Live-Event vorbei ist</li>
+      <li><strong>VORVERANSTALTUNG</strong> - Wie das Live-Erlebnis angezeigt wird, bevor das Live-Event beginnt</li>
+      <li><strong>WOHNEN</strong> - Wie die Erfahrung während des Live-Events angezeigt wird</li>
+      <li><strong>POST-EVENT</strong> - Wie die Erfahrung erscheint, wenn das Live-Event vorbei ist</li>
     </ul>
-    <p>Um die verschiedenen Erlebnisstände zu bearbeiten, klicken Sie auf einen Status und <a href="/experiences/inpage/adding-components-page-experience.html">fügen Sie dann nach Bedarf Komponenten zur</a> Verfügung. Das Menü <strong>LAYOUT</strong> bietet weitere Anpassungsoptionen für jeden Bundesstaat.</p>
+    <p>Klicken Sie auf einen Status und dann auf, um die verschiedenen Erfahrungsstatus zu bearbeiten <a href="/experiences/inpage/adding-components-page-experience.html">Fügen Sie der Erfahrung Komponenten hinzu</a> wie benötigt. Das <strong>LAYOUT</strong> Das Menü bietet weitere Anpassungsoptionen für jeden Status.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="social">Soziales Teilen</h2>
-    <p>Die Social-Sharing-Optionen bieten Links, um die Veranstaltung und die Videos mit Ihren Social-Media-Konten zu teilen.</p>
-    <p>Um die Social-Sharing-Einstellungen zu konfigurieren, klicken Sie auf den Link <strong>Freigabe konfigurieren</strong> oder klicken Sie im linken Navigationsbereich auf <strong>EINSTELLUNGEN &gt; Soziales</strong> . Die sozialen Einstellungen bestehen aus:</p>
+    <h2 id="social">Social Sharing</h2>
+    <p>Die Social-Sharing-Optionen bieten Links zum Teilen des Ereignisses und der Videos für Ihre Social-Media-Konten.</p>
+    <p>Klicken Sie auf, um die Einstellungen für die soziale Freigabe zu konfigurieren <strong>Konfigurieren Sie die Freigabe</strong> Link oder klicken <strong>EINSTELLUNGEN&gt; Sozial</strong> in der linken Navigation. Die sozialen Einstellungen bestehen aus:</p>
     <ul>
-      <li><a href="#event_sharing">Event-Shar</a></li>
-      <li><a href="#video_sharing">Video-Sharing</a></li>
+      <li><a href="#event_sharing">Ereignisfreigabe</a></li>
+      <li><a href="#video_sharing">Video teilen</a></li>
     </ul>
     <div class="BCL-subsection">
-      <h3 id="event_sharing">Event-Shar</h3>
-      <p>Die Einstellungen für die Freigabe von Veranstaltungen ermöglichen es dem Zuschauer, die Veranstaltungsseite mit Social-Media-Konten zu teilen. Befolgen Sie diese Schritte, um die Ereignisdetails zu konfigurieren:</p>
+      <h3 id="event_sharing">Ereignisfreigabe</h3>
+      <p>Mit den Einstellungen für die Ereignisfreigabe kann der Betrachter die Ereignisseite für Social Media-Konten freigeben. Führen Sie die folgenden Schritte aus, um die Ereignisdetails zu konfigurieren:</p>
       <ol class="bcls-tasklist-restart">
-        <li>Um ein <strong>Ereignisbild</strong> hinzuzufügen, klicken Sie auf <strong>Bild hinzufügen</strong> und dann:
+        <li>Um ein <strong>Ereignisbild hinzuzufügen</strong>, klicken Sie auf Bild <strong>hinzufügen</strong> und dann:
           <ul>
-            <li>Ziehen Sie ein Bild aus dem Dateisystem und legen Sie es dann auf den Drop-Bereich</li>
-            <li>Klicken Sie auf „ <strong>Durchsuchen</strong> “ und wählen Sie ein Bild aus dem Dateisystem</li>
+            <li>Ziehen Sie ein Bild aus dem Dateisystem und legen Sie es im Ablagebereich ab</li>
+            <li>Klicken <strong>Durchsuche</strong> und wählen Sie ein Bild aus dem Dateisystem aus</li>
             <li>Geben Sie die URL zu einer Remote-Image-Datei ein</li>
           </ul>
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="füge Bild hinzu" src="/assets/images/experiences/live/node18545-add-image.png"/></figure>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add image" src="/assets/images/experiences/live/node18545-add-image.png" /></figure>
         </li>
-        <li>Geben Sie einen <strong>Veranstaltungstitel</strong> und eine <strong>Ereignisbeschreibung</strong>ein.</li>
-        <li>Wählen Sie aus, wie die Optionen zum Teilen von Veranstaltungen angezeigt werden, Text <strong>teilen </strong> oder die sozialen Symbole anzeigen.</li>
-        <li>Wählen Sie die verfügbaren Sharing-Optionen aus.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Sharing-Optionen" src="/assets/images/experiences/live/node18545-sharing-options.png"/></figure>
+        <li>Geben Sie ein <strong>Ereignistitel</strong> und <strong>Eventbeschreibung</strong>.</li>
+        <li>Wählen Sie aus, wie die Optionen für die Ereignisfreigabe angezeigt werden sollen. <strong>Teilen </strong> Text oder Anzeige der sozialen Symbole.</li>
+        <li>Wählen Sie die verfügbaren Freigabeoptionen aus.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="sharing options" src="/assets/images/experiences/live/node18545-sharing-options.png" /></figure>
         </li>
-        <li>Geben Sie die <strong>Seiten-URL</strong> ein, in die das Erlebnis eingebettet wird.</li>
-        <li>Klicken Sie auf <strong>Erstellen</strong>. Dadurch werden die Meta-Tags generiert, die zum <code translate="No">&lt;head&gt;</code> Abschnitt Ihrer Seite hinzugefügt werden können. Diese Funktion ermöglicht es sozialen Websites, das Ereignisbild, den Titel und die Beschreibung anzuzeigen, wenn die Zuschauer Ihre Erfahrungen teilen.</li>
+        <li>Geben Sie die <strong>Seiten-URL</strong> wo die Erfahrung eingebettet wird.</li>
+        <li>Klicken <strong>Generieren</strong>. Dadurch werden die Meta-Tags generiert, die dem hinzugefügt werden können <code translate="No">&lt;head&gt;</code> Abschnitt Ihrer Seite. Mit dieser Funktion können soziale Websites das Bild, den Titel und die Beschreibung des Ereignisses anzeigen, wenn die Zuschauer Ihre Erfahrungen teilen.</li>
       </ol>
     </div>
     <div class="BCL-subsection">
-      <h3 id="video_sharing">Video-Sharing</h3>
-      <p>Die Einstellungen für die Videofreigabe ermöglichen es dem Zuschauer, die Videos mit Social-Media-Konten zu teilen. Befolgen Sie diese Schritte, um die Videofreigabe zu konfigurieren:</p>
+      <h3 id="video_sharing">Video teilen</h3>
+      <p>Mit den Einstellungen für die Videofreigabe kann der Betrachter die Videos für Social Media-Konten freigeben. Führen Sie die folgenden Schritte aus, um die Videofreigabe zu konfigurieren:</p>
       <ol class="bcls-tasklist-restart">
-        <li>Wählen Sie aus, wie die Optionen für das Teilen von Videos angezeigt werden, Text <strong>freigeben </strong> oder die sozialen Symbole anzeigen.</li>
-        <li>Wählen Sie die verfügbaren Sharing-Optionen aus.
-          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Sharing-Optionen" src="/assets/images/experiences/live/node18545-sharing-options.png"/></figure>
+        <li>Wählen Sie aus, wie die Videofreigabeoptionen angezeigt werden sollen. <strong>Teilen </strong> Text oder Anzeige der sozialen Symbole.</li>
+        <li>Wählen Sie die verfügbaren Freigabeoptionen aus.
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="sharing options" src="/assets/images/experiences/live/node18545-sharing-options.png" /></figure>
         </li>
-        <li>Klicken Sie auf <strong>Save</strong>, um die Änderungen zu speichern.</li>
+        <li>Klicken <strong>speichern</strong> um die Änderungen zu speichern.</li>
       </ol>
     </div>
   </section>
   <section class="bcls-section">
-    <h2 id="image_placeholder">Bild-Platzhalter</h2>
-    <p>Die Status PRE-EVENT und POST EVENT bieten die Möglichkeit, ein Hero-Bild anzuzeigen.</p>
-    <p>So fügen Sie ein Hero-Bild hinzu:</p>
+    <h2 id="image_placeholder">Platzhalter fuer Bild</h2>
+    <p>Die Zustände PRE-EVENT und POST-EVENT bieten die Möglichkeit, ein Heldenbild anzuzeigen.</p>
+    <p>So fügen Sie ein Heldenbild hinzu:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie auf den Link <strong>Bild hinzufügen</strong> .</li>
-      <li>Geben Sie einen <strong>Namen</strong> für das Bild ein (nur ASCII-Zeichen sind erlaubt).
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Dialog mit Heldenbild" src="/assets/images/experiences/live/node18545-hero-image-dialog.png"/></figure>
+      <li>Drücke den <strong>Bild hinzufügen</strong> Verknüpfung.</li>
+      <li>Geben Sie ein <strong>Name</strong> für das Bild (nur ASCII-Zeichen sind zulässig).
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="hero image dialog" src="/assets/images/experiences/live/node18545-hero-image-dialog.png" /></figure>
       </li>
-      <li>Um ein Bild anzugeben, haben Sie folgende Vorteile:
+      <li>Um ein Bild anzugeben, können Sie:
         <ul>
-          <li>Ziehen Sie ein Bild aus dem Dateisystem und legen Sie es dann auf den Drop-Bereich</li>
-          <li>Klicken Sie auf „ <strong>Durchsuchen</strong> “ und wählen Sie ein Bild aus dem Dateisystem</li>
+          <li>Ziehen Sie ein Bild aus dem Dateisystem und legen Sie es im Ablagebereich ab</li>
+          <li>Klicken <strong>Durchsuche</strong> und wählen Sie ein Bild aus dem Dateisystem aus</li>
           <li>Geben Sie die URL zu einer Remote-Image-Datei ein</li>
         </ul>
       </li>
-      <li>Stellen Sie die <strong>Bildgröße ein</strong>.
+      <li>Stellen Sie die <strong>Bildgröße</strong>.
         <ul>
-          <li><strong>Bild zuschneiden</strong> - Schneidet das Bild in der Mitte so zu, dass es den gesamten 16:9 -Bereich ausfüllt, aber ein Teil des oberen/unteren oder linken Rechts-Verhältnisses geht je nach Bildausschnitt des Bildes verloren</li>
-          <li><strong>Bild in Komponentengrenzen</strong> enthalten - Enthält das Bild innerhalb der Grenzen des 16:9 -Bereichs, aber je nach Seitenverhältnis wird etwas Leerzeichen oberem/unterhalb oder links/rechts vom Bild angezeigt</li>
-          <li><strong>Bild dehnen</strong> - Ignoriert das Seitenverhältnis des Bildes und zwingt es, den 16:9 -Bereich vollständig zu füllen; dies wird das Bild verzerren</li>
-          <li><strong>Originalbildgröße </strong>- Verwenden Sie die ursprüngliche Bildgröße, es wird keine Größenänderung durchgeführt; reagiert nicht</li>
+          <li><strong>Bild zuschneiden</strong> - Beschneidet das Bild in der Mitte so, dass es den gesamten 16: 9-Bereich ausfüllt. Je nach Seitenverhältnis des Bildes geht jedoch ein Teil des oberen / unteren oder linken / rechten Bereichs verloren</li>
+          <li><strong>Bild innerhalb der Komponentengrenzen enthalten</strong> - Enthalten Sie das Bild innerhalb der Grenzen des 16: 9-Bereichs, aber je nach Seitenverhältnis wird ein Leerraum über / unter oder links / rechts vom Bild angezeigt</li>
+          <li><strong>Bild strecken</strong> - Ignoriert das Seitenverhältnis des Bildes und zwingt es, den 16: 9-Raum vollständig auszufüllen. Dadurch wird das Bild verzerrt</li>
+          <li><strong>Originalbildgröße </strong> - Verwenden Sie die ursprüngliche Bildgröße, es wird keine Größenänderung durchgeführt; reagiert nicht</li>
         </ul>
       </li>
-      <li>Wählen Sie die Status aus, in denen das Bild angezeigt werden soll.</li>
-      <li>Klicken Sie auf <strong>Speichern</strong> , um das Bild zum Erlebnis hinzuzufügen.</li>
+      <li>Wählen Sie die Zustände aus, in denen das Bild angezeigt werden soll.</li>
+      <li>Klicken <strong>speichern</strong> um das Bild der Erfahrung hinzuzufügen.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="countdown">Countdown der Veranstaltung</h2>
-    <p>Der Countdown-Timer zeigt die Anzahl der Monate, Tage, Stunden, Minuten und Sekunden vor Beginn des Live-Events an. Ein Beispiel für eine Countdown-Uhr ist unten dargestellt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Countdown-Zeitgeber" src="/assets/images/experiences/live/node18545-countdown-timer.png"/></figure>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Der Stil des Countdown-Timers kann durch Klicken auf <strong>STYLE</strong> im linken Navigationsbereich gestaltet werden.</aside>
-    <p>Führen Sie die folgenden Schritte aus, um eine Countdown-Uhr hinzuzufügen:</p>
+    <h2 id="countdown">Ereignis-Countdown</h2>
+    <p>Der Countdown-Timer zeigt die Anzahl der Monate, Tage, Stunden, Minuten und Sekunden an, bevor das Live-Ereignis beginnt. Ein Beispiel für einen Countdown-Zähler ist unten dargestellt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="countdown timer" src="/assets/images/experiences/live/node18545-countdown-timer.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Der Stil des Countdown-Timers kann durch Klicken auf <strong>STYLE</strong> in der linken Navigation gestaltet werden.</aside>
+    <p>Gehen Sie folgendermaßen vor, um einen Countdown-Timer hinzuzufügen:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie auf der Seite auf den Link „ <strong>Ereignis-Countdown konfigurieren</strong> “. Die Seite „Veranstaltungseinstellungen“ wird geöffnet.</li>
-      <li>Markieren Sie „ <strong>Ereignis-Countdown anzeigen</strong></li>
-      <li>Stellen Sie das <strong>Startdatum</strong>, die <strong>Startzeit</strong> und die <strong>Ereigniszeitzone</strong>ein.</li>
-      <li>Geben Sie eine <strong>Übergangsnachricht</strong> Diese Meldung wird angezeigt, wenn der Countdown-Timer Null erreicht, aber bevor der Live-Stream beginnt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Event-Einstellungen" src="/assets/images/experiences/live/node18545-event-settings.png"/></figure>
+      <li>Drücke den <strong>Konfigurieren Sie den Ereignis-Countdown</strong> Link auf der Seite. Die Seite Ereigniseinstellungen wird geöffnet.</li>
+      <li>Prüfen <strong>Ereignis-Countdown anzeigen</strong>.</li>
+      <li>Legen Sie das <strong>Startdatum</strong>, die <strong>Startzeit</strong> und die <strong>Ereigniszeitzone fest</strong>.</li>
+      <li>Geben Sie ein <strong>Übergangsnachricht</strong>. Diese Meldung wird angezeigt, wenn der Countdown-Timer Null erreicht, aber bevor der Live-Stream beginnt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="event settings" src="/assets/images/experiences/live/node18545-event-settings.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="text_placeholder">Platzhalter für Text</h2>
-    <p>Die Status PRE-EVENT und POST EVENT bieten die Möglichkeit, statischen Text anzuzeigen.</p>
+    <h2 id="text_placeholder">Textplatzhalter</h2>
+    <p>Die Zustände PRE-EVENT und POST-EVENT bieten die Möglichkeit, statischen Text anzuzeigen.</p>
     <p>So fügen Sie statischen Text hinzu:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie auf den Link <strong>Text hinzufügen</strong> .</li>
-      <li>Geben Sie den Text ein, der zum Erlebnis hinzugefügt werden soll. Die Symbolleiste kann verwendet werden, um den Text zu formatieren.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Text-Dialog" src="/assets/images/experiences/live/node18545-text-dialog.png"/></figure>
+      <li>Drücke den <strong>Text hinzufügen</strong> Verknüpfung.</li>
+      <li>Geben Sie den Text ein, der zum Erlebnis hinzugefügt werden soll. Über die Symbolleiste kann der Text formatiert werden.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="text dialog" src="/assets/images/experiences/live/node18545-text-dialog.png" /></figure>
       </li>
-      <li>Klicken Sie auf <strong>Speichern</strong> , um den Text zur Erfahrung hinzuzufügen.</li>
+      <li>Klicken <strong>speichern</strong> um den Text zur Erfahrung hinzuzufügen.</li>
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="reminder">Kalender-Erinnerung</h2>
-    <p>Eine Kalendererinnerung kann so konfiguriert werden, dass Benutzer auf einen Link klicken können, um eine Kalendererinnerung herunterzuladen. Ein Beispiel für eine Kalendererinnerung ist unten dargestellt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="zum Kalender hinzufügen" src="/assets/images/experiences/live/node18545-add-to-calendar.png"/></figure>
-    <p>Wenn Sie auf die Erinnerung klicken, werden Kalenderoptionen angezeigt.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="zu Kalenderoptionen hinzufügen" src="/assets/images/experiences/live/node18545-add-to-calendar-options.png"/></figure>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Der Stil der Kalendererinnerung kann durch Klicken auf<strong> STYLE</strong> im linken Navigationsbereich gestaltet werden.</aside>
-    <p>Um eine Kalendererinnerung hinzuzufügen, gehen Sie folgendermaßen vor:</p>
+    <h2 id="reminder">Kalendererinnerung</h2>
+    <p>Eine Kalendererinnerung kann so konfiguriert werden, dass Benutzer auf einen Link klicken können, um eine Kalendererinnerung herunterzuladen. Eine Beispielkalendererinnerung ist unten dargestellt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add to calendar" src="/assets/images/experiences/live/node18545-add-to-calendar.png" /></figure>
+    <p>Durch Klicken auf die Erinnerung werden Kalenderoptionen angezeigt.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="add to calendar options" src="/assets/images/experiences/live/node18545-add-to-calendar-options.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Der Stil der Kalendererinnerung kann durch Klicken auf<strong> STIL</strong> in der linken Navigation gestaltet werden.</aside>
+    <p>Gehen Sie folgendermaßen vor, um eine Kalendererinnerung hinzuzufügen:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie auf der Seite auf den Link <strong>Configure Calendar Reminder</strong> . Die Seite „Veranstaltungseinstellungen“ wird geöffnet.</li>
-      <li>Aktivieren Sie <strong>„Zum Kalender hinzufügen“ -Erinnerung anzeigen</strong>.</li>
-      <li>Stellen Sie das <strong>Enddatum</strong>, die <strong>Endzeit</strong> und den <strong>Ereignistitel</strong>ein. Die<strong> Veranstaltungsbeschreibung</strong> und der <strong>Veranstaltungsort</strong> sind optional.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Event-Einstellungen" src="/assets/images/experiences/live/node18545-calendar-settings.png"/></figure>
-        <aside class="bcls-aside bcls-aside--information">Hinweis: Die Benutzeroberfläche wird etwas anders aussehen, wenn die Option <strong>Ereignis-Countdown anzeigen</strong> ausgewählt ist.</aside>
+      <li>Klick auf das <strong>Konfigurieren Sie die Kalendererinnerung</strong> Link auf der Seite. Die Seite Ereigniseinstellungen wird geöffnet.</li>
+      <li>Prüfen <strong>Erinnerung "Zum Kalender hinzufügen" anzeigen</strong>.</li>
+      <li>Legen Sie das <strong>Enddatum</strong>, die <strong>Endzeit</strong> und den <strong>Ereignistitel fest</strong>. Das<strong> Eventbeschreibung</strong> und <strong>Veranstaltungsort</strong> sind optional.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="event settings" src="/assets/images/experiences/live/node18545-calendar-settings.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Hinweis: Die Benutzeroberfläche sieht etwas anders aus, wenn die <strong>Event-Countdown anzeigen</strong> Option ausgewählt ist.</aside>
       </li>
-      <li>Klicken Sie auf <strong>Save</strong>.</li>
+      <li>Klicken <strong>speichern</strong>.</li>
     </ol>
   </section>
   <section class="bcls-section">
     <h2 id="videos_placeholder">Platzhalter für Videos</h2>
-    <p>Während der Status PRE-EVENT, LIVE und POST EVENT können verschiedene Videos angezeigt werden. Video Cloud-Videos und YouTube-Videos können dem Erlebnis hinzugefügt werden.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Bevor YouTube-Videos zu einem Erlebnis hinzugefügt werden können, müssen Sie <a href="/settings/configuring-youtube-settings.html">die YouTube-Einstellungen konfigurieren</a>.</aside>
+    <p>Während der Zustände PRE-EVENT, LIVE und POST-EVENT können verschiedene Videos angezeigt werden. Video Cloud-Videos und YouTube-Videos können der Erfahrung hinzugefügt werden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Bevor YouTube-Videos zu einem Erlebnis hinzugefügt werden können, müssen Sie die YouTube-Einstellungen <a href="/settings/configuring-youtube-settings.html">konfigurieren</a>.</aside>
     <p>So wählen Sie die anzuzeigenden Videos aus:</p>
     <ol class="bcls-tasklist-restart">
-      <li>Klicken Sie auf den Link <strong>Video auswählen </strong>oder klicken Sie im linken Navigationsbereich auf <strong>VIDEOS</strong>.  Das Dialogfeld „ <strong>Video auswählen</strong> “ wird angezeigt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="wählen Sie einen Videodialog" src="/assets/images/experiences/live/node18545-select-video.png"/></figure>
+      <li>Drücke den <strong>Video auswählen </strong>Link oder klicken <strong>VIDEOS</strong> in der linken Navigation. Das <strong>Wählen Sie ein Video aus</strong> Das Dialogfeld wird angezeigt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select a video dialog" src="/assets/images/experiences/live/node18545-select-video.png" /></figure>
       </li>
-      <li>Wählen Sie den Status aus, für den Sie das Video auswählen möchten:
+      <li>Wählen Sie den Status aus, für den das Video ausgewählt werden soll:
         <ul>
           <li>Pre-Event</li>
-          <li>Live</li>
-          <li>Post-Event</li>
+          <li>Wohnen</li>
+          <li>Nach dem Event</li>
         </ul>
       </li>
-      <li>Wählen Sie das Video <strong>Source</strong>:
+      <li>Wählen Sie das Video aus <strong>Quelle</strong>::
         <ul>
           <li><strong>Video Cloud</strong> - Video Cloud-Videoinhalte werden verwendet</li>
-          <li><strong>YouTube</strong> - YouTube-Videoinhalte werden verwendet</li>
+          <li><strong>Youtube</strong> - YouTube-Videoinhalte werden verwendet</li>
         </ul>
       </li>
-      <li><a href="#searchvids">Suchen Sie nach einem Video</a>, klicken Sie darauf, um es auszuwählen, und klicken Sie dann auf <strong>Auswählen</strong>. Das Video wird zur Videoliste hinzugefügt.
-        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Videoliste" src="/assets/images/experiences/live/node18545-video-list.png"/></figure>
+      <li><a href="#searchvids">Suche nach einem Video</a> Klicken Sie darauf, um es auszuwählen, und klicken Sie dann auf <strong>Wählen</strong>. Das Video wird der Videoliste hinzugefügt.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="video list" src="/assets/images/experiences/live/node18545-video-list.png" /></figure>
       </li>
-      <li>Klicken Sie auf den <strong>Live-</strong> oder <strong>Post-Event-Bereich</strong> oder klicken Sie auf <strong>„Videos auswählen</strong> “, um zusätzliche Videos auszuwählen.</li>
+      <li>Klick auf das <strong>Wohnen</strong> oder <strong>Nach dem Event</strong> Abschnitte oder klicken Sie auf <strong>Wählen Sie Videos</strong> um zusätzliche Videos auszuwählen.</li>
     </ol>
-    <p>Interaktionen und Begleitkomponenten können zu Videos vor und nach der Veranstaltung hinzugefügt und bei der Wiedergabe des Videos angezeigt werden. Interaktionen umfassen <strong>Links</strong> und <strong>Karten</strong> und werden beim Abspielen eines Videos als Teil des Players angezeigt. Zu den Begleitkomponenten gehören <strong>HTML</strong>, <strong>Bilder</strong> und <strong>Textobjekte</strong> und werden außerhalb des Players angezeigt.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Interaktionen und Begleitkomponenten sind für das Live-Video nur verfügbar, wenn es sich um ein VOD-Asset handelt.</aside>
-    <p>Videos, die mit Interaktivität konfiguriert wurden, zeigen ein Symbol in der Spalte <strong>Interaktivität</strong> an, das die Art der Interaktion (en) angibt. Informationen zum Hinzufügen und Konfigurieren von Interaktionen und Companion Components finden Sie unter:</p>
+    <p>Interaktionen und Begleitkomponenten können zu Videos vor und nach dem Ereignis hinzugefügt und während der Wiedergabe des Videos angezeigt werden. Interaktionen umfassen <strong>Links</strong> und <strong>Karten</strong> und werden als Teil des Players angezeigt, wenn ein Video abgespielt wird. Zu den Begleitkomponenten gehören <strong>HTML</strong>, <strong>Bilder</strong> und <strong></strong> Textobjekte und werden außerhalb des Players angezeigt.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Interaktionen und Begleitkomponenten sind für das Live-Video nicht verfügbar, es sei denn, es handelt sich um ein VOD-Asset.</aside>
+    <p>Videos, die mit Interaktivität konfiguriert wurden, zeigen ein Symbol im <strong>Interaktivität</strong> Spalte, die die Art der Interaktion(en) angibt. Informationen zum Hinzufügen und Konfigurieren von Interaktionen und Begleitkomponenten finden Sie unter:</p>
     <ul>
-      <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Hinzufügen von Interaktionen zu einem In-Page-Erlebnis</a></li>
-      <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Konfigurieren von Companion-Komponenten für ein In-Page-Erlebnis</a></li>
+      <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Hinzufügen von Interaktionen zu einer In-Page-Erfahrung</a></li>
+      <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Konfigurieren von Companion-Komponenten für eine In-Page-Erfahrung</a></li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="live_video">Auswahl des Live-Videos</h2>
-    <p>Wenn der <strong>Live-Status</strong> ausgewählt ist, muss eine Video Cloud-Video-ID oder Referenz-ID für das Live-Video-Asset eingegeben werden. Die Quelle für das Live-Video wird immer Video Cloud sein.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Wählen Sie eine Live-Video-Ref-ID" src="/assets/images/experiences/live/node18545-select-live-video.png"/></figure>
-    <p>Wenn Sie die Option <strong>Referenz-ID</strong> auswählen, können Sie die Referenz-ID für das Live-Video im Medienmodul ändern, ohne die Video-ID für das Erlebnis ändern zu müssen. Sie können beispielsweise das aktuelle Live-Video mit einer Referenz-ID des <strong>Live-Events</strong>bezeichnen. Wenn Sie das Live-Erlebnis erstellen, wählen Sie <strong>Referenz-ID</strong> aus und geben Sie <strong>Live-Event</strong>ein.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="wählen Sie ein Live-Video" src="/assets/images/experiences/live/node18545-select-live-video-ref-id.png"/></figure>
-    <p>Jetzt, wann immer es ein neues Live-Event gibt, verwenden Sie das Medienmodul, um die Referenz-ID für dieses Video auf <strong>Live-Event</strong>festzulegen.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="medien-Modul" src="/assets/images/experiences/live/node18545-media-module.png"/></figure>
-    <p>Durch die Verwendung der Referenz-ID muss das Live-Erlebnis nicht bearbeitet und erneut veröffentlicht werden, wenn ein neues Ereignis beginnt. Wenn ein neues Ereignis gestartet wird, verwenden Sie das Medienmodul, um die Video-Referenz-ID des Live-Video-Assets zu bearbeiten.</p>
+    <p>Wenn der <strong>Wohnen</strong> Wenn der Status ausgewählt ist, muss eine Video Cloud-Video-ID oder Referenz-ID für das Live-Video-Asset eingegeben werden. Die Quelle für das Live-Video ist immer Video Cloud.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select live video ref id" src="/assets/images/experiences/live/node18545-select-live-video.png" /></figure>
+    <p>Auswahl der <strong>Referenz ID</strong> Mit dieser Option können Sie die Referenz-ID für das Live-Video im Medienmodul ändern, ohne die Video-ID für die Erfahrung ändern zu müssen. Sie können beispielsweise das aktuelle Live-Video mit der Referenz-ID "kennzeichnen" <strong>Live Veranstaltung</strong>. Wählen Sie beim Erstellen des Live-Erlebnisses aus <strong>Referenz ID</strong> und eintreten <strong>Live Veranstaltung</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select live video" src="/assets/images/experiences/live/node18545-select-live-video-ref-id.png" /></figure>
+    <p>Verwenden Sie jetzt bei jedem neuen Live-Ereignis das Medienmodul, um die Referenz-ID für dieses Video auf festzulegen <strong>Live Veranstaltung</strong>.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="media module" src="/assets/images/experiences/live/node18545-media-module.png" /></figure>
+    <p>Durch die Verwendung der Referenz-ID muss das Live-Erlebnis nicht bearbeitet und erneut veröffentlicht werden, wenn ein neues Ereignis beginnt. Wenn ein neues Ereignis gestartet wird, verwenden Sie das Medienmodul, um die Videoreferenz-ID des Live-Video-Assets zu bearbeiten.</p>
   </section>
   <section class="bcls-section">
-    <h2 id="searchvids">Suchen nach Videos</h2>
-    <p>Das <strong>Suchfeld</strong> kann verwendet werden, um nach Videos zu suchen. Bei der Suche nach Video Cloud-Videos sucht Gallery den Videonamen, Kurz- und Langbeschreibungen, Tags und benutzerdefinierten Feldern. Wenn Sie YouTube-Videos durchsuchen, verwendet Gallery die YouTube-Such-AP</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="suche feld" src="/assets/images/experiences/live/node18545-search-field.png"/></figure>
-    <p>Klicken Sie auf <strong>Weitere Suchoptionen</strong> , um eine genauere Kontrolle darüber zu erhalten, welche Felder durchsucht werden, und um Text einzubeziehen und auszuschließen. Beachten Sie, dass diese Optionen nur verfügbar sind, wenn eine Video Cloud-Quelle verwendet wird.</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="adv suche" src="../../assets/images/experiences/live/node18545-adv-search.png"/></figure>
+    <h2 id="searchvids">Nach Videos suchen</h2>
+    <p>Das <strong>Suche</strong> Feld kann verwendet werden, um nach Videos zu suchen. Bei der Suche nach Video Cloud-Videos durchsucht Gallery den Videonamen, kurze und lange Beschreibungen, Tags und benutzerdefinierte Felder. Bei der Suche nach YouTube-Videos verwendet Gallery die YouTube-Such-API.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="search field" src="/assets/images/experiences/live/node18545-search-field.png" /></figure>
+    <p>Klicken <strong>Weitere Suchoptionen</strong> für eine genauere Kontrolle darüber, welche Felder durchsucht werden und um Text einzuschließen und auszuschließen. Beachten Sie, dass diese Option nur verfügbar ist, wenn eine Video Cloud-Quelle verwendet wird.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="adv search" src="../../assets/images/experiences/live/node18545-adv-search.png" /></figure>
   </section>
 </article>
-
-<!-- complete bootstrap layout -->
-    </div>
-    <div class="col-sm-2 right-side-bar">
-      
-      <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
-        <ul id="in_page_nav" class="list-none"></ul>
-      </nav>
-      
-    </div>
-  </div>
-</div>
-
-<hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
-    <div class="region region-footer-top-center col-md-12">
-      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
-
-        <h2>Brightcove Support-Service</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://status.brightcove.com">Systemstatus</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
-          </li>
-          <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
-
-        <h2>Schulungen</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
-          </li>
-          <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
-          </li>
-          <li>
-            <a href="https://university.brightcove.com/">Brightcove Universität</a>
-          </li>
-        </ul>
-
-      </nav>
-      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
-
-        <h2>Brightcove</h2>
-
-        <ul class="menu">
-          <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
-          </li>
-          <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-  <div class="row">
-    <div class="region region-footer-bottom-center col-md-12">
-      <div class="bcls-copyright footer-menu">
-        <table>
-          <tr>
-            <td>
-              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
-            </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
-            <td>
-              <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</div>
-<script>
-      
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
-  
-
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
-  
-  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
-  <script src="/assets/js/sites_nav.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
-  <script src="/assets/js/feedback.js"></script>
-  
-  <script src="/assets/js/sajari-search-foot.js"></script>
-  
-  <!-- <script src="/assets/js/sajari-index.js"></script> -->
-  <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
-    </style>
-
-</body>
-
-</html>

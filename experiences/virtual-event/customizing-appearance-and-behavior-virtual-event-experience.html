@@ -1,0 +1,81 @@
+---
+title: Anpassen von Aussehen und Verhalten einer virtuellen Veranstaltungserfahrung
+parent: Portal 
+grandparent: Experiences
+description: In this topic you will learn how to customize the appearance and behavior of a Virtual Event Experience.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Anpassen von Aussehen und Verhalten einer virtuellen Veranstaltungserfahrung</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Bearbeiten Sie die Erfahrung und klicken Sie auf, um die Einstellungen für Aussehen und Verhalten zu konfigurieren <strong>Aussehen und Verhalten</strong> in der linken Navigation. Folgende Einstellungen stehen zur Verfügung:</p>
+    <ul>
+      <li><a href="#header_footer">Kopf-und Fußzeile</a> - Konfigurieren Sie eine benutzerdefinierte Kopf- / Fußzeile für die Erfahrung</li>
+      <li><a href="#custom">Benutzerdefiniert</a> - Verwenden Sie benutzerdefinierte CSS- und JavaScript-Dateien</li>
+      <li><a href="#background">Hintergrundbild und Video</a> - Konfigurieren Sie ein Hintergrundbild oder Video</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="header_footer">Konfigurieren von benutzerdefiniertem Kopf- / Fußzeilen-HTML</h2>
+    <p>Galerie bietet die Möglichkeit, eine benutzerdefinierte Kopf- und / oder Fußzeile für die Site zu verwenden. Dies bietet die Möglichkeit, ein virtuelles Ereigniserlebnis so anzupassen, dass es dem Erscheinungsbild Ihrer Unternehmenswebsites besser entspricht. Eine benutzerdefinierte Kopf- / Fußzeile kann auch auf Kontoebene konfiguriert werden. Informationen zum Konfigurieren einer benutzerdefinierten Kopf- / Fußzeile auf Kontoebene finden Sie unter <a href="/settings/configuring-gallery-settings.html">Galerieeinstellungen konfigurieren</a>.</p>
+    <p>Gehen Sie folgendermaßen vor, um eine virtuelle Ereigniserfahrung für die Verwendung einer benutzerdefinierten Kopf- oder Fußzeile zu konfigurieren.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Entwerfen Sie die Kopf- / Fußzeile für Ihre Site. Die Kopf- / Fußzeile kann einen beliebigen gültigen HTML-, JavaScript- oder CSS-Code enthalten.</li>
+      <li>Klicken <strong>ERSCHEINUNGSBILD UND VERHALTEN&gt; Kopf- und Fußzeile</strong> in der linken Navigation.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-header-footer.png" /></figure>
+      </li>
+      <li>Fügen Sie den Header-HTML-Code in das ein <strong>Benutzerdefiniertes Header-HTML</strong> Feld.</li>
+      <li>Wähle aus <strong> Fügen Sie den Standardheader unter dem benutzerdefinierten Header ein</strong> Option zum Anzeigen des Standardvorlagenkopfs unter Ihrem benutzerdefinierten Kopf.</li>
+      <li>Fügen Sie den Fußzeilen-HTML-Code in die ein <strong>Benutzerdefinierte Fußzeile HTML</strong> Feld.</li>
+      <li>Wähle aus <strong> Fügen Sie die Standardfußzeile unter der benutzerdefinierten Fußzeile ein</strong> Option zum Anzeigen der Standardvorlagen-Fußzeile unter Ihrer benutzerdefinierten Fußzeile.</li>
+      <li>Klicken Sie auf<strong> Speichern</strong>.</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>Hinweise zur Verwendung benutzerdefinierter Kopf- und Fußzeilen</h3>
+      <ul>
+        <li>Gallery führt keine Überprüfung des HTML-Codes durch, der für die Kopf- / Fußzeile bereitgestellt wird</li>
+        <li>Es gibt keine explizite Zeichenbeschränkung für das HTML in Kopf- und Fußzeilen</li>
+        <li>Externe CSS- und JavaScript-Dateien werden unterstützt</li>
+        <li>Der Code sollte den Prinzipien des Responsive Design folgen, damit er geräteübergreifend ordnungsgemäß skaliert werden kann</li>
+        <li>Wir haben CSS-Konflikte gesehen, wenn Websites Bootstrap verwenden (Gallery verwendet auch Bootstrap). Stellen Sie sicher, dass Sie nach Konflikten suchen und diese lösen</li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="custom">Benutzerdefinierte Einstellungen konfigurieren</h2>
+    <p>Die benutzerdefinierten Einstellungen bieten die Möglichkeit, das Erscheinungsbild der Website anzupassen. Klicken Sie auf, um die benutzerdefinierten Einstellungen zu konfigurieren <strong>ERSCHEINUNGSBILD UND VERHALTEN&gt; Benutzerdefiniert</strong> in der linken Navigation.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-custom-settings.png" /></figure>
+    <p>Folgende Einstellungen stehen zur Verfügung:</p>
+    <ul>
+      <li><strong>Benutzerdefinierte CSS-URL</strong> - Wird verwendet, um den Speicherort einer benutzerdefinierten CSS-Datei anzugeben, um den Stil anzupassen. Drücke den <strong>CSS anzeigen</strong> Link zum Anzeigen der CSS-Datei, die derzeit zum Gestalten der Site verwendet wird.</li>
+      <li><strong>Benutzerdefinierte JavaScript-URL</strong> - Wird verwendet, um den Speicherort einer benutzerdefinierten JS-Datei anzugeben, um den Stil und / oder das Verhalten der Site anzupassen.</li>
+      <li><strong>Benutzerdefinierte Favicon-URL</strong> - Wird verwendet, um den Speicherort des für die Site zu verwendenden Favicons anzugeben. Browser, die Favicon-Unterstützung bieten, zeigen das Favicon normalerweise auf der Browser-Registerkarte der Seite und neben dem Seitennamen in einer Liste von Lesezeichen an.</li>
+      <li><strong>Benutzerdefiniertes Symbol für mobile Apps</strong> - Dient zum Auswählen eines Bildes, das als Startbildschirmsymbol verwendet wird, wenn die Site auf dem Startbildschirm Ihres Geräts gespeichert wird. Brightcove empfiehlt, dass Sie eine hohe Auflösung hochladen (wir empfehlen 1024 x 1024 Pixel). Das quadratische Bild und die Galerie skalieren das Bild und verwenden eine Version, die für Ihr Gerät am besten geeignet ist.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/portal/node18667-app-icon.png" /></figure>
+      </li>
+      <li><strong>Benutzerdefinierte Antwortheader</strong> - Geben Sie HTTP-Header ein, die als Antwort auf Anfragen an das Portal gesendet werden. Beispielsweise können Header hinzugefügt werden, um eine Content Security Policy (CSP) oder eine HTTP-Strict-Transport-Security (HSTS) hinzuzufügen.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="background">Konfigurieren eines Hintergrundbilds oder Videos</h2>
+    <p>Die Galerie bietet die Möglichkeit, ein benutzerdefiniertes Hintergrundbild oder Video für die Site anzuzeigen. Klicken Sie auf, um ein Hintergrundbild oder Video zu konfigurieren <strong>ERSCHEINUNGSBILD UND VERHALTEN&gt; Hintergrundbild und Video</strong> in der linken Navigation.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/site-editor-background-image.png" /></figure>
+    <h3>Hintergrundbild hinzufügen</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>Um ein Bild anzugeben, können Sie:
+        <ul>
+          <li>Ziehen Sie ein Bild aus dem Dateisystem und legen Sie es im Ablagebereich ab</li>
+          <li>Klicken <strong>Durchsuche</strong> und wählen Sie ein Bild aus dem Dateisystem aus</li>
+          <li>Geben Sie die URL zu einer Remote-Image-Datei ein</li>
+        </ul>
+      </li>
+      <li>Klicken Sie auf<strong> Speichern</strong>.</li>
+    </ol>
+    <p>Klicken <strong>Entfernen</strong> um das Bild zu entfernen.</p>
+    <h3>Hintergrundvideo hinzufügen</h3>
+    <p>Ein Video Cloud-Video kann auch als Hintergrundvideo verwendet werden. Fügen Sie eine Video Cloud-Video-ID in das Feld ein <strong>Video ID</strong> Feld und klicken <strong>speichern</strong>.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Wenn die Video-ID ungültig ist, wird das hochgeladene Hintergrundbild oder das Standardhintergrundbild angezeigt.</aside>
+  </section>
+</article>

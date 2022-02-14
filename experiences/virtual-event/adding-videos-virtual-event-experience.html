@@ -1,0 +1,83 @@
+---
+title: Hinzufügen von Videos zu einem virtuellen Event-Erlebnis
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to add videos to a Virtual Event Experience.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Hinzufügen von Videos zu einem virtuellen Event-Erlebnis</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Mit dem Galerie-Sammlungseditor können Sie die Videos auswählen, die in einem virtuellen Ereignis angezeigt werden sollen. Wie andere Erfahrungen vom Typ Portal sind Videos in Sammlungen organisiert.</p>
+    <p>Klicken Sie auf, um Videos zu einer virtuellen Ereigniserfahrung hinzuzufügen <strong>VIDEOS</strong> in der linken Navigation.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/site-editor-videos-menu.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="layout">Organisation der Videosammlung</h2>
+    <p>Die Reihenfolge der Sammlungen steuert, wie sie auf der Startseite des virtuellen Ereignisses angezeigt werden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Informationen zum Erstellen von Sammlungen und zum Hinzufügen von Videos zu einer Sammlung finden Sie unter <a href="/experiences/portal/adding-videos-portal-experience.html">Hinzufügen von Videos zu einem Portal Experience</a>.</aside>
+    <p>Die Vorlage für virtuelle Ereignisse enthält vier Hauptbereiche, in denen Videos angezeigt werden, wie auf der Beispielsite angegeben:</p>
+    <ol>
+      <li><strong>Ausgewählte Sammlung</strong> - Wird normalerweise für die Live- oder Live-Funktion verwendet <a href="/experiences/virtual-event/using-simulated-live-videos.html">simulativer Inhalt</a> das wird während der gesamten Veranstaltung angezeigt. Dies sollte idealerweise basierend auf der Go-Live-Zeit von frühestens bis spätestens bestellt werden, um die beste Erfahrung zu erzielen.</li>
+      <li><strong>Primärsammlung</strong> - Kann alles enthalten, wird jedoch normalerweise verwendet, um bestimmte VoD-Ausbrüche oder Inhalte zu kennzeichnen, auf die Sie zusätzliche Aufmerksamkeit lenken möchten</li>
+      <li><strong>Sekundärsammlung</strong> - Kann alles enthalten, wird jedoch normalerweise verwendet, um bestimmte VoD-Ausbrüche oder Inhalte zu kennzeichnen, auf die Sie zusätzliche Aufmerksamkeit lenken möchten</li>
+      <li><strong>Spuren</strong> - Wird normalerweise für VoD-Inhalte verwendet</li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-layout-example.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Die Sammlungen Featured, Primär und Sekundär unterstützen maximal 24 Videos.</aside> <aside class="bcls-aside bcls-aside--information">Hinweis: Fügen Sie der Konfigurationsdatei ein statisches Inhaltsobjekt hinzu, um einen Titel über der primären / sekundären Sammlung einzufügen. Weitere Informationen finden Sie unter <a href="/experiences/virtual-event/working-static-content.html">Arbeiten mit statischem Inhalt</a>.</aside>
+    <p>Wenn Sie Sammlungen in der Galerie bestellen, sollten Sie die Sammlungen wie folgt bestellen:</p>
+    <ul>
+      <li>Sammlung 1 - Ausgewählte Sammlung</li>
+      <li>Sammlung 2 - Primärsammlung</li>
+      <li>Sammlung 3 - Sekundäre Sammlung</li>
+      <li>Sammlung 4 - Tracks</li>
+    </ul>
+    <p>Für das obige Beispiel würden die Sammlungen wie folgt erstellt:</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-order-example.png" /></figure>
+    <p>Einige zusätzliche Schritte sind erforderlich, um die Spuren zu konfigurieren. Tracks sind in der <a href="#tracks">Ereignisspuren konfigurieren</a> Abschnitt unten. <strong>Wiedergabeliste</strong> oder <strong>Benutzerdefiniert</strong> basierte Sammlungen können verwendet werden, aber wenn das Ereignis verwendet wird <a href="/experiences/virtual-event/using-role-based-access-control.html">rollenbasierte Zugriffskontrolle</a> Um zu verhindern, dass Benutzer bestimmter Rollen Inhalte sehen, sollten Wiedergabelisten nicht verwendet werden, da Wiedergabelisten keine rollenbasierte Filterung der Zugriffssteuerung unterstützen.</p>
+    <p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-criteria-example.png" /></figure>
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="tracks">Ereignisspuren konfigurieren</h2>
+    <p>Befolgen Sie beim Erstellen der Tracks die folgenden Richtlinien, um sicherzustellen, dass sie in der Erfahrung korrekt angezeigt werden:</p>
+    <ul>
+      <li>Die Sammlungsnamen werden in der Vorlage für virtuelle Ereignisse angezeigt. Verwenden Sie daher aussagekräftige Namen
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-tracks-ui-sample.png" /></figure>
+      </li>
+      <li>Die Titelsammlung ist eine verschachtelte Sammlung. In dieser Sammlung werden keine Videos angezeigt</li>
+      <li>Die Titelsammlung sollte die vierte Sammlung sein</li>
+      <li>Erstellen Sie untergeordnete Sammlungen unter der Titelsammlung für jede Spur
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/collection-tracks-example.png" /></figure>
+      </li>
+      <li>Verwenden Sie beim Erstellen der Sammlungen keine Wiedergabelisten</li>
+      <li>Die Position des Tracks-Abschnitts ist in der Konfigurationsdatei und angegeben <a href="/experiences/virtual-event/positioning-content-homepage.html">kann gewechselt werden</a> durch Bearbeiten der <code translate="No">breakout_collection</code> Objekt in der Konfigurationsdatei</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="track-url">Konfigurieren der Track-URL</h2>
+    <p>Sobald die Sammlungen erstellt wurden, muss die Konfigurationsdatei aktualisiert werden, damit der Link On-Demand-Sitzungen im Header zur richtigen URL führt. Der für die Titelsammlung verwendete Name (Sammlung 4) wird in der URL verwendet, um auf die Titelseite zuzugreifen. Bestätigen Sie Folgendes, um sicherzustellen, dass die URL korrekt eingestellt ist.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Überprüfen Sie die Konfigurationsdatei und suchen Sie die <code translate="No">breakout_collection</code> Objekt.</li>
+      <li> Das <code translate="No">collection</code> Parameter enthält die URL der Titelseite. Beispielsweise:<br/>
+        <pre><code translate="No">
+"breakout_collection": {
+    "collection": "/category/videos/tracks",
+    "insert_target": ".bc-on-demand-section",
+    "insert_mode": "after"
+},
+          </code></pre>
+      </li>
+      <li>Der letzte Weg in der <code translate="No">collection</code> Die URL sollte den Namen Ihrer Titelsammlung widerspiegeln (Sammlung 4). Wenn Ihre Tracks-Sammlung (Sammlung 4) beispielsweise 'Sessions' heißt, wird der Sammlungsparameter wie folgt aktualisiert:<br/>
+        <pre><code translate="No">
+"collection": "/category/videos/sessions",      
+          </code></pre>
+      </li>
+      <li>Klicken Sie zum Überprüfen der Konfiguration in der Kopfzeile auf den Link On-Demand-Sitzungen. Die Track-Sitzung sollte angezeigt werden. Durch Klicken auf einen Titel sollten die Videos in einem Titel geöffnet werden. Wenn ein 404-Fehler angezeigt wird, liegt ein Konfigurationsproblem vor.</li>
+    </ol>
+    <p>&nbsp;</p>
+  </section>
+</article>

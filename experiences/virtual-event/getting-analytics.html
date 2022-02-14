@@ -1,0 +1,141 @@
+---
+title: Exportieren der Datenbeschreibung der virtuellen Ereignisanzeige: In diesem Thema wird erläutert, wie Sie virtuelle Ereignisanzeigedaten für ein virtuelles Ereignis mithilfe der Analytics-API exportieren.
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to export virtual event viewer data.
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Einführung</h2>
+		<p>Sie können Berichtsereignisse für Ihre virtuellen Ereignisse nach Gerät und Standort aggregieren, zusätzlich zu den Konto-, Viewer- und Videoanalysen für ein bestimmtes Konto. Mithilfe dieser Informationen können Sie Ihre bevorstehenden virtuellen Ereignisse besser organisieren, um das Engagement der Zuschauer zu maximieren.</p>
+		<p>Diese Daten können mithilfe der Analytics-API heruntergeladen und im JSON-, CSV- oder XLXS-Format zurückgegeben werden. Der nächste Abschnitt enthält eine kurze Einführung in die Analytics-API. Wenn Sie bereits wissen, wie man es verwendet, können Sie zum folgenden Abschnitt springen, um Informationen zum Abrufen von Analysedaten für virtuelle Ereignisse zu erhalten.</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="Analytics_API">Die Analytics-API</h2>
+		<p>Wie andere <a href="https://apis.support.brightcove.com/">Plattform-APIs</a> Die Analytics-API ist eine RESTful-API, mit der Sie programmgesteuert mit der Video Cloud-Plattform interagieren können. Es gibt Analysedaten basierend auf verschiedenen URL-Parametern zurück, die Sie der Anforderung hinzufügen. Standardmäßig werden die Daten im JSON-Format zurückgegeben. Sie können jedoch anfordern, dass CSV- oder XLXS-Daten stattdessen in der Tabellenkalkulations-App geöffnet werden.</p>
+		<aside class="bcls-aside bcls-aside--information">Beachten Sie, dass dieses Dokument nur das behandelt, was Sie wissen müssen, um Analysedaten für virtuelle Ereignisse zu erhalten. Weitere Verwendungszwecke finden Sie in der allgemeinen <a href="https://apis.support.brightcove.com/analytics-api/index.html">Analytics API-Dokumentation</a>.</aside>
+		<h3>So stellen Sie Anfragen</h3>
+		<p>Anfragen an RESTful-APIs werden an eine URL gestellt, genauso wie ein Browser eine Anfrage an eine URL stellt, um eine Webseite abzurufen. Sie können die API-Anforderung jedoch nicht einfach in einen Browser einfügen, da die Anforderung authentifiziert werden muss (wir kommen dazu), um zu zeigen, dass Sie zum Abrufen der Daten berechtigt sind. Es gibt jedoch viele Tools, die Ihnen dabei helfen. Hier ist eine kurze Liste:</p>
+		<ul>
+			<li><a href="https://apis.support.brightcove.com/general/use-insomnia-api-requests.html">Schlaflosigkeit</a> (eine beliebte plattformübergreifende App)</li>
+			<li><a href="https://apis.support.brightcove.com/general/use-postman-api-requests.html">Postbote</a> (eine weitere beliebte plattformübergreifende App)</li>
+			<li><a href="https://apis.support.brightcove.com/general/concepts-api-tester.html">Online API Tester</a> erstellt von Brightcove Learning Services</li>
+			<li><a href="https://apis.support.brightcove.com/getting-started/concepts-testing-tools-brightcove-apis.html#shell">api-tester.sh</a> (Ein Curl-basiertes Shell-Skript, das von Brightcove Learning Services erstellt wurde.)</li>
+		</ul>
+		<h3>Anfragen authentifizieren</h3>
+		<p>Zum Schutz Ihrer Daten müssen Analytics-API-Anforderungen einen Autorisierungsheader enthalten, der ein Zugriffstoken enthält:</p>
+		<pre><code class="language-http" translate="No">Authorization: bearer <span class="bcls-input">your access token</span></code></pre>
+		<p>Wie erhalten Sie das Zugriffstoken? Sie können alles darüber in lesen <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Ein Zugriffstoken erhalten</a> Die kurze Antwort lautet jedoch, dass nach einer kleinen Vorbereitung jedes der oben aufgeführten Tools (und viele andere) diese für Sie bereitstellt.</p>
+		<p>Die Vorbereitung besteht darin, <strong>Client-Anmeldeinformationen abzurufen</strong>, die aus einer <code translate="no">client_id</code> und einem <code translate="no">client_secret bestehen</code>. Sie können diese mit dem erhalten <a href="https://studio.brightcove.com/products/videocloud/admin/oauthsettings">Studio Admin Seite</a> (Sie müssen ein Administrator in Ihrem Konto sein oder einen Administrator beauftragen, dies zu tun):</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Klicken <span class="button-blue">Neue Anwendung registrieren</span>.</li>
+			<li>Geben Sie im daraufhin angezeigten Dialogfeld "Analytics" als Namen ein.</li>
+			<li>Wählen Sie die Konten aus, für die Sie die API verwenden möchten.</li>
+			<li>
+				Unter <strong>Offengelegte Brightcove-APIs</strong> , auswählen <strong>Lesen</strong> unter <strong>Analytik</strong> und <strong>Video lesen</strong> unter <strong>CMS</strong>:
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/experiences/virtual-event/analytics-api-permissions.png" alt="API Permissions">
+					<figcaption class="bcls-caption--image">API-Berechtigungen</figcaption>
+				</figure>
+			</li>
+			<li>Klicken <span class="button-blue">speichern</span>.</li>
+			<li>
+				In einem neuen Dialogfeld wird das angezeigt <strong>Kunden ID</strong> <strong>Kundengeheimnis</strong>. Kopieren und speichern Sie sie beide an einem sicheren Ort, an dem Sie sie wieder finden können. <aside class="bcls-aside bcls-aside--warning">Nachdem Sie dieses Dialogfeld geschlossen haben, können Sie dieses Client-Geheimnis nicht erneut abrufen. Wenn Sie es verlieren, müssen Sie ein neues erstellen.</aside>
+			</li>
+		</ol>
+		<h3>Das Zugriffstoken</h3>
+		<p>Das Zugriffstoken wird mithilfe der Clientanmeldeinformationen von einer anderen Brightcove-API abgerufen. Sie können dies selbst tun, aber auch hier verwendet jedes der im vorherigen Abschnitt aufgeführten Tools Ihre Client-Anmeldeinformationen, holt das Zugriffstoken für Sie und fügt es in den Anforderungsheader ein, der mit Ihrer Analytics-API-Anforderung gesendet wurde.</p>
+	</section>
+  <section class="bcls-section">
+    <h2 id="API_request">Die Analytics-API-Anforderung</h2>
+    <p>Hier ist die Form der Analytics-API-Anforderung:</p>
+    <pre><code class="language-http" translate="No">http://analytics.api.brightcove.com/v1/data?accounts=<span class="bcls-input">{account1_id,account2_id}</span>
+&from=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&to=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&dimensions=viewer,video,country,city,region,device_type,protocol
+&fields=video,video.name,viewer,country,region,city,device_type,time,video_view,video_percent_viewed,video_seconds_viewed
+&sort=-video_view&limit=20&format=csv</code></pre>
+		<aside class="bcls-aside bcls-aside--information">Beachten Sie, dass die Anfrage-URL keine Zeilenumbrüche enthalten sollte! Zeilenumbrüche werden hier zur besseren Lesbarkeit hinzugefügt.</aside>
+		<h3>Erforderliche Parameter</h3>
+		<table class="bcls-table">
+			<caption class="bcls-caption--table">Erforderliche Parameter</caption>
+			<thead class="bcls-table__head">
+					<tr>
+							<th>Parameter</th>
+							<th>Erforderliche Werte</th>
+							<th>Optionale Werte</th>
+					</tr>
+			</thead>
+			<tbody class="bcls-table__body">
+					<tr>
+							<td><code translate="no">Konten</code></td>
+							<td>eine oder mehrere Konto-IDs</td>
+							<td></td>
+					</tr>
+					<tr>
+							<td><code translate="no">Maße</code></td>
+							<td>
+								<ul>
+									<li><code translate="no">Betrachter</code></li>
+									<!-- <li><code translate="no">application</code></li> -->
+								</ul>
+							</td>
+							<td>
+								<ul>
+									<li><code translate="no">Konto</code></li>
+									<li><code translate="no">Video</code></li>
+									<li><code translate="no">Land</code></li>
+									<li><code translate="no">Region</code></li>
+									<li><code translate="no">stadt</code></li>
+									<li><code translate="no">device_type</code></li>
+									<li><code translate="no">Protokoll</code></li>
+								</ul>
+							</td>
+					</tr>
+			</tbody>
+	</table>
+	<p>Sehen <a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#params">Parameter</a> Für einige zusätzliche optionale Parameter, mit denen Sie den Datumsbereich festlegen, die Ergebnisse sortieren, das Antwortformat festlegen usw. können.</p>
+
+  </section>
+	<section class="bcls-section">
+		<h2 id="where_filters">Wo Filter</h2>
+		<p>Sie können die Ergebnisse mit der filtern <code translate="no">wo</code> Parameter. Sehen <a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#filterValues">Wo Filter</a> für Details</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="fields">Felder</h2>
+		<h3>Wird direkt vom Spieler gesammelt</h3>
+		<ul>
+			<li><code translate="no">betrachter</code>: Ereignisanzeige (SSO-ID oder Geräte-ID oder eindeutiger String basierend auf User-Agent und IP), entnommen aus dem <code translate="no">Benutzer</code> Gebiet</li>
+			<!-- <li><code translate="no">application</code>: virtual event experience id, if null default value = <code translate="no">account_id</code></li> -->
+			<li><code translate="no">time</code>: Zeitstempel des letzten erhaltenen Ereignisses</li>
+			<li><code translate="no">Video</code></li>
+			<li><code translate="no">Land</code></li>
+			<li><code translate="no">Region</code></li>
+			<li><code translate="no">stadt</code></li>
+			<li><code translate="no">device_type</code></li>
+		</ul>
+		<h3>Aggregierte Metriken</h3>
+		<ul>
+			<li><code translate="no">video_view</code>: Die Gesamtzahl, wie <code translate="no">video_view vom Player gesendet</code> wurde (beachten Sie, dass <code translate="no">video_view</code> <strong>nicht</strong> wird gesendet, wenn der Betrachter ein Video pausiert und neu startet oder das Video mehrmals ansieht, ohne die Seite zu aktualisieren)</li>
+		</ul>
+		<h3>Berechnete Felder</h3>
+		<ul>
+			<li>
+				<code translate="no">video_seconds_viewed</code>:
+				<ul>
+					<li>Höchster Bereichswert, der von der Collector-API unabhängig von der Reihenfolge empfangen wird</li>
+					<li>Beachten Sie, dass Ereignisse, die Bereiche über 20 Sekunden beschreiben, vom Analytics-System verworfen werden. Dies kann zu einem ungenauen Wert führen, wenn der Player nicht richtig instrumentiert wurde, um Bereiche von 20 Sekunden oder weniger zu senden - siehe <a href="https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html">Überblick: Datenerfassungs-API</a></li>
+				</ul>
+			</li>
+			<li><code translate="no"></code> video_percent_view:video_seconds_viewed/video_duration *100 (dieser Wert fehlt oder ist ungenau, wenn die Videodauer nicht an den Datensammelpunkt gesendet wurde)</li>
+			<li><code translate="no">video_engagement_xx</code>: Die Gesamtzahl der Aufrufe beim xx video_percent_viewt (xx = 1, 25, 50, 75 oder 100)</li>
+		</ul>
+		<details>
+			<summary>Beispiel-API-Antwort (JSON)</summary>
+<pre><code class="language-json" translate="no">{ 4 "item_count": 1, 5 "items": [ 6 { 7 "viewer": "test@brightcove.com", 8 "country": "GB", 9 "video_seconds_viewed": 253, 10 "city": "London", 11 "video_percent_viewed": 527.08, 12 "device_type": "other", 13 "video": "70701475639202", 14 "video_view": 46, 15 "region": "GB-ENG" 16 } 17], 18 „Zusammenfassung“: { 19 "video_seconds_viewed": 253, 20 "video_percent_viewed": 527.08, 21 "video_view": 46 22 } 23}</code></pre>
+		</details>
+	</section>
+</article>

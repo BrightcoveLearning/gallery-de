@@ -1,0 +1,49 @@
+---
+title: Erstellen einer Event-Agenda-Datei
+parent: Virtual Event 
+grandparent: Experiences
+description: In this topic you will learn how to create an event agenda file that can be uploaded to initially populate an online agenda for a Virtual Event Experience.
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Erstellen einer Event-Agenda-Datei</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Normalerweise wird die Veranstaltungsagenda zunächst in einem Drittanbieter-Tool erstellt, zum Beispiel Microsoft Excel oder Google Sheets. Das Agenda-Modul erfordert, dass eine externe CSV-Agenda-Datei hochgeladen wird, um die Veranstaltungsagenda anfänglich zu erstellen. Nachdem die Agenda-Datei hochgeladen wurde, kann sie mit dem Agenda-Modul bearbeitet werden.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Eine Beispiel-Agenda-Vorlagendatei kann hier heruntergeladen werden.</aside> <aside class="bcls-aside bcls-aside--information">Hinweis: Im Modul Agenda gibt es keine Möglichkeit, eine Agenda zu erstellen. Sie müssen eine .csv-Datei hochladen, um die Ereignisagenda zunächst zu füllen.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="naming">Anforderungen an die Spaltenbenennung</h2>
+    <p>Beim Erstellen der ursprünglichen Agenda-Datei können Sie eine Beispiel-Agenda-Vorlage herunterladen und bearbeiten oder eine vorhandene Agenda-Datei verwenden, die Sie möglicherweise erstellt haben. Das Modul Agenda sucht nach bestimmten Spaltennamen. Diese Spalten werden den entsprechenden Feldern im Agenda-Modul zugeordnet. Andere Spalten, die sich möglicherweise in Ihrer Agenda-Datei befinden, werden vom Agenda-Modul ignoriert. Um eine Agenda-Datei hochzuladen, werden die folgenden Spalten benötigt:</p>
+    <ul>
+      <li><code translate="No">name</code>- Sitzungsname</li>
+      <li><code translate="No">start_date</code>- Startdatum der Sitzung (MM/DD/YYYY-Format)</li>
+      <li><code translate="No">start_time</code>- Sitzungsstartzeit</li>
+      <li><code translate="No">timezone</code>- Zeitzone für start_time (unter Verwendung der Zonen-ID aus dem <a href="https://nodatime.org/TimeZones">IANA-Zeitzonen</a>)</li>
+      <li><code translate="No">duration</code>- Sitzungsdauer in Minuten</li>
+      <li><code translate="No">track</code>- Wert, der den Track identifiziert (dh Technik, Vertrieb, Marketing); ein Titelname von <strong>ALLE</strong> zeigt an, dass die Sitzung alle Tracks umfasst (z. B. Mittagessen, Pausen)</li>
+    </ul>
+    <p>Die folgenden Spalten sind optional, aber wenn sie in Ihrer Agenda-Datei vorhanden sind, werden sie auch in das Agenda-Modul importiert:</p>
+    <ul>
+      <li><code translate="No">description</code>- Sitzungsbeschreibung</li>
+      <li><code translate="No">speaker1_first</code>- Vorname des Sprechers</li>
+      <li><code translate="No">speaker1_last</code>- Nachname des Sprechers</li>
+      <li><code translate="No">speaker1_email</code>- E-Mail-Adresse des Sprechers (wird verwendet, um einen Sprecher eindeutig zu identifizieren)</li>
+      <li><code translate="No">speaker2_first</code>- Vorname von Sprecher 2</li>
+      <li><code translate="No">speaker2_last</code>- Nachname von Sprecher 2</li>
+      <li><code translate="No">speaker2_email</code>- E-Mail-Adresse von Sprecher 2 (wird verwendet, um einen Sprecher eindeutig zu identifizieren)</li>
+      <li><code translate="No">speaker3_first</code>- Sprecher 3 Vorname</li>
+      <li><code translate="No">speaker3_last</code>- Sprecher 3 Nachname</li>
+      <li><code translate="No">speaker3_email</code>- E-Mail-Adresse von Sprecher 3 (wird verwendet, um einen Sprecher eindeutig zu identifizieren)</li>
+      <li><code translate="No">session_type</code>- Sitzungstyp (Sitzung, Keynote, Meeting, Sonstiges)</li>
+      <li><code translate="No">video _id</code>- Video-ID (für Session, Keynote und andere Session-Typen)</li>
+      <li><code translate="No">url</code>- Meeting-URL (für Meeting-Sitzungstypen)</li>
+      <li><code translate="No">related _label</code>- Label für den zugehörigen Link, der im Agenda-Modul angezeigt wird</li>
+      <li><code translate="No">related_link</code>- URL-Link zu einem Sitzungshandout, Folien usw.</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Der Upload der Agenda unterstützt bis zu drei Redner, weitere Redner können mit dem Agenda-Modul zu einer Sitzung hinzugefügt werden.</aside>
+    <p>Wenn Sie bereit sind, Ihre Agenda in das Agenda-Modul zu importieren, exportieren Sie sie als .csv-Datei. <strong>Das Modul Agenda kann nur eine CSV-Datei importieren.</strong> Informationen zum Hochladen Ihrer Agenda-Datei in das Agenda-Modul finden Sie unter <a href="managing-agenda-virtual-event-experience.html">Hochladen und Anpassen der Veranstaltungsagenda</a>.</p>
+    <p>&nbsp;</p>
+  </section>
+</article>

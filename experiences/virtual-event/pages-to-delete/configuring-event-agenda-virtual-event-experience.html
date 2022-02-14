@@ -1,0 +1,35 @@
+---
+title: Konfigurieren der Veranstaltungsagenda
+parent: Virtual Event 
+grandparent: Experiences
+layout: staging
+---
+
+<article class="bcls-article">
+  <h1>Event Agenda konfigurieren</h1>
+  <summary>In diesem Thema erfahren Sie, wie Sie die Veranstaltungsagenda einer virtuellen Ereigniserfahrung anpassen.</summary>
+  <section class="bcls-section">
+    <p>Die Veranstaltungsagenda wird normalerweise verwendet, um die geplanten Live-Ereignisse anzuzeigen, die in der vorgestellten Sammlung angezeigt werden. Die Schaltfläche, die bei jeder Sitzung angezeigt wird, hängt vom Status der Sitzung ab:</p>
+    <ul>
+      <li><strong>Vor der Veranstaltung</strong> - Es wird keine Schaltfläche angezeigt, der Countdown-Timer wird angezeigt</li>
+      <li> <strong>Während</strong> - JETZT LEBEN, wenn die Veranstaltung läuft</li>
+      <li><strong>Nach dem Ereignis</strong> - Die Schaltfläche zeigt VIEW SESSION für Ereignisse in der Vergangenheit an.</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/schedule-example.png" /></figure>
+    <p>Basierend auf der Anzahl der Tage auf der Tagesordnung, a <strong>Show</strong> Das Dropdown-Menü wird angezeigt, in dem der Betrachter den anzuzeigenden Tagesplan auswählen kann.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/experiences/virtual-event/schedule-example-show.png" /></figure>
+    <p>Die Agenda-Informationen werden durch Bearbeiten der angepasst <code translate="No">schedule</code> Objekt in der Konfigurationsdatei.</p>
+    <ul>
+      <li><code translate="No">name</code>- Sitzungsname</li>
+      <li><code translate="No">description</code>- Sitzungsbeschreibung - Wird derzeit nicht auf der Seite angezeigt, kann jedoch mit benutzerdefiniertem JavaScript angezeigt werden</li>
+      <li><code translate="No">starts_at</code>- Datum und Uhrzeit des Sitzungsstarts</li>
+      <li><code translate="No">ends_at</code>- Datum und Uhrzeit des Sitzungsendes</li>
+      <li><code translate="No">live_id</code>- Nicht benutzt</li>
+      <li><code translate="No">vod_id</code>- Video ID</li>
+      <li><code translate="No">speakers</code>- Informationen zum Sitzungssprecher</li>
+      <li><code translate="No">image_url</code>- Sitzungsbild. Die Standardbildgröße beträgt 320 x 180 Pixel. Bilder werden auf diese Größe zugeschnitten.<br>
+      </li>
+    </ul>
+    <p>Das <code translate="No">schedule</code> Objekt in der Konfigurationsdatei hat auch Parameter für die <code translate="No">title</code> Dies wird über dem Zeitplan angezeigt und um festzulegen, ob der Zeitplan in einem angezeigt wird <code translate="No">expanded</code> Modus.</p>
+  </section>
+</article>
