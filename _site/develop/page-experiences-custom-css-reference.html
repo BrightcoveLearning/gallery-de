@@ -1,16 +1,26 @@
-﻿<!doctype html>
-<html lang="de">
+<!doctype html>
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="This topic outlines the CSS classes that are used when creating In-Page Experiences. This information is provided so you can further style your experiences using CSS.">
   
-  <title>In-Page Experiences Benutzerdefinierte CSS-Referenz</title>
+  <title>Benutzerdefinierte CSS-Referenz für In-Page-Erlebnisse</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-ultra.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-super.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-black.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-bold.woff" type="font/woff">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.eot" type="font/eot">
+  <link data-react-helmet="true" rel="preload" as="font" href="https://files.brightcove.com/fonts/balto/baltoweb-medium.woff" type="font/woff">
   <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
@@ -18,737 +28,590 @@
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
   <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
   <link rel="stylesheet" href="/assets/css/local.css">
-  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || []; Funktion gtag(){dataLayer.push(arguments);} gtag('js', neues Datum()); gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="body">
-
-<header>
+ <header>
   <div class="div-header">
-    <a href="/"><span class="product-logo" style="font-family:'Balto Web','Public Sans';font-size:2em;font-weight:bold;">BRIGHTCOVE GALERIE<sup>™</sup></span></a>
+    <a href="/"><span class="product-logo" style="font-size:32px;max-width:400px;font-weight:normal;color:rgb(8, 8, 140);">BRIGHTCOVE GALERIE<sup>&trade;</sup></span></a>
 <!-- GTranslate: https://gtranslate.io/ -->
-<select onchange="doGTranslate(this);"><option value="">Sprache wählen</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+<select onchange="doGTranslate(this);"><option value="">Sprache auswählen</option><option value="en|en" translate="No">Englisch</option><option value="en|zh-TW" translate="No">繁體 中文</option><option value="en|fr" translate="No">Französisch</option><option value="en|de" translate="No">Deutsch</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Spanisch</option></select>
 
 <script>
-/* <![CDATA[ */
-function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
-/* ]]> */
+/*<![CDATA[ */ Funktion dogTranslate (lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;} /*]]> */
 </script>
 
-    
 
 
-    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="Support"/> Kontaktieren Sie Support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="Systemstatus"/> Systemstatus</a></span> <br/>
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Support kontaktieren</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> Systemstatus</a></span>
+    <br>
     
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb arr-right">
       
-      <li class="breadcrumb-item"><a href="/">Nach Hause</a></li>
+      <li class="breadcrumb-item first-item"><a href="/">Zuhause</a></li>
+        
+      <li class="breadcrumb-item"><a href="/develop/">Develop</a></li>
       
-      
-      
-      <li class="breadcrumb-item"><a href="/develop/">entwickeln</a></li>
-      
-      <li class="breadcrumb-item active" aria-current="page">In-Page Experiences Benutzerdefinierte CSS-Referenz</li>
+      <li class="breadcrumb-item active" aria-current="page">Benutzerdefinierte CSS-Referenz für In-Page-Erlebnisse</li>
     </ol>
   </nav>
-</header>
-<div class="container">
+</header> <div class="container">
     <div class="row">
-            <div class="col-sm-3 left-side-bar">
-        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
-          <option value="">Weitere Brightcove Docs</option>
-          
-            
-              <option value="https://support.brightcove.com">Dokumentation Home</option>
-            
-          
-            
-              <option value="https://audience.support.brightcove.com">Brightcove Publikum</option>
-            
-          
-            
-              <option value="https://beacon.support.brightcove.com">Brightcove Leuchtfeuer</option>
-            
-          
-            
-              <option value="https://campaign.support.brightcove.com">Brightcove Kampagne</option>
-            
-          
-            
-              <option value="https://engage.support.brightcove.com">Brightcove Engage</option>
-            
-          
-            
-              <option value="https://live.support.brightcove.com">Brightcove Live</option>
-            
-          
-            
-              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
-            
-          
-            
-              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
-            
-          
-            
-              <option value="https://social.support.brightcove.com">Brightcove Social</option>
-            
-          
-            
-              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
-            
-          
-            
-              <option value="https://player.support.brightcove.com">Brightcove Spieler-Entwicklung</option>
-            
-          
-            
-              <option value="https://apis.support.brightcove.com">APIs für Video Cloud-Plattform</option>
-            
-          
-            
-              <option value="https://sdks.support.brightcove.com">Videocloud-Geräte-SDKs</option>
-            
-          
-            
-              <option value="https://integrations.support.brightcove.com">Integrationen und CMS-Konnektoren</option>
-            
-          
-            
-              <option value="https://general.support.brightcove.com">Video Cloud — Allgemeine Informationen</option>
-            
-          
-            
-              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
-            
-          
-        </select>
-
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Weitere Brightcove Docs</option>
+					 
+							<option value="https://support.brightcove.com">Dokumentationsstartseite</option>
+						  
+							<option value="">-- VIDEO-CLOUD --</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player-Entwicklung</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;APIs der Video Cloud-Plattform</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud-Geräte-SDKs</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrationen und CMS-Konnektoren</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Allgemeine Informationen zu Video Cloud</option>
+						  
+							<option value="">-- VIDEO-ESSENTIALS --</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Leuchtfeuer</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						  
+							<option value="">-- VIDEO-CLOUD-ADD-ONS --</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Kampagne</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engagement</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Galerie</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+						 
+				</select>
         <nav class="sidenav" id="side_nav">
-          
-            
-            <h5><a href="/index.html">Nach Hause</a></h5>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/get-started/index.html">Erste Schritte <strong>+</strong></a></h5>
+           
+            <h5><a href="/index.html">Zuhause</a></h5>
+              
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Einstieg</a></h5>
               <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Erstellen eines Portalerlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Erstellen eines In-Page-Erlebnisses</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Erstellen und Verwalten von Erfahrungen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Erste Schritte mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/get-started/overview-gallery-experiences.html">Überblick über Gallerie-Erlebnisse</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/experiences/index.html">Erfahrungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/portal/index.html">Portal <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Video Cloud-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-videos-portal-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">YouTube-Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Ändern des Player-Layouts</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Konfigurieren von Handlungsaufforderungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Konfigurieren von SEO-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-details-portal-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Konfigurieren des Trackings</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Erstellung, Bearbeitung und Veröffentlichung von Portal-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Anpassen von Erscheinungsbild und Verhalten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Anpassen der Einstellungen für Katalogvorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Anpassen der Einstellungen für Chronicle-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Anpassen des Inhalts von Portalseiten</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Anpassen der Marquee-Vorlageneinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Anpassen der Player- und Lead-Formulareinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Anpassen der Sitekonfiguration</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Anpassen der Site-Funktionen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Anpassen der Social-Media-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-style-portal-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Anpassen der Video- und Wiedergabeeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Anpassen der Videoeinstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Herunterladen von Videos</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indizieren einer Portalerfahrung</a></li>
-                        
-                        <li><a href="/experiences/portal/overview-gallery-portal-templates.html">Übersicht über Galerieportal-Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">Verwenden von benutzerdefinierten Schriftarten</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/inpage/index.html">Auf Seite <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/inpage/adding-components-page-experience.html">Hinzufügen von Komponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Hinzufügen von Interaktionen</a></li>
-                        
-                        <li><a href="/experiences/inpage/adding-videos-page-experience.html"> Videos hinzufügen</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Konfigurieren von Begleitkomponenten</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-details-page-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Konfigurieren der Einstellungen für ein Erlebnis</a></li>
-                        
-                        <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Konfigurieren von Video-Downloads</a></li>
-                        
-                        <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Erstellen benutzerdefinierter Themen</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-page-experience.html">Anpassen einer In-Page-Erfahrung</a></li>
-                        
-                        <li><a href="/experiences/inpage/customizing-style-page-experience.html">Anpassen des Stils</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">Übersicht über In-Page Experience Vorlagen</a></li>
-                        
-                        <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">Übersicht: Erstellen und Veröffentlichen von In-Page-Erlebnissen</a></li>
-                        
-                        <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">Überprüfen von Analytics</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">Überprüfen von Anruf-zu-Action-Analysen</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">Überprüfung des Analytics-Dashboards</a></li>
-                        
-                        <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">Überprüfen von Videoanalysen</a></li>
-                        
-                        <li><a href="/experiences/portal/updating-gallery-templates.html">Galerie-Vorlagen aktualisieren</a></li>
-                        
-                        <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">Verwenden von dynamischen Videoüberschreibungen</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/live/index.html">Live-Ereignis <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Hinzufügen von Pigeonhole zu einer Live-In-Page</a></li>
-                        
-                        <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Hinzufügen einer Taubeneinstellung zu einem Live-Portal</a></li>
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-page-experience.html">Erstellen eines In-Page-Erlebnisses für Live-Events</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-portal-experience.html">Erstellen eines Live-Event-Portal-Erleb</a></li>
-                        
-                        <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Erstellen des Status „Live Event“</a></li>
-                        
-                        <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Erstellen des Status nach dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Erstellen des Status vor dem Ereignis</a></li>
-                        
-                        <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Anpassen der Live-Event-Portal-Einstellungen</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-                  
-                    <li class="submenu-header">
-                      <a href="/experiences/landing/index.html">Landing-Page <strong>+</strong></a>
-                      <ul class="sidenav-subsubmenu" style="display:none;">
-                        
-                        <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
-                        
-                        <li><a href="/experiences/landing/creating-landing-page-experience.html">Erstellen eines Landingpage-Erlebnisses</a></li>
-                        
-                        <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Gallery Lead-Daten</a></li>
-                        
-                        <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
-                        
-                        <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
-                        
-                        <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen eines Erlebnisses</a></li>
-                        
-                      </ul>
-                    </li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/general/index.html">Allgemein <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/general/gallery-system-requirements.html">Gallery Systemvoraussetzungen</a></li>
-                  
-                
-                  
-                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Problembehandlung bei Problemen mit Brightcove Gallery</a></li>
-                  
-                
-                  
-                    <li><a href="/general/brightcove-gallery-cookies.html">Brightcove Galerie-Cookies</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/settings/index.html">Galerie-Einstellungen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/settings/configuring-gallery-settings.html">Konfigurieren von Gallery-</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-youtube-settings.html">YouTube-Einstellungen konfigurieren</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-access-control-profiles.html">Konfigurieren von Zugriffssteuerungsprofil</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domains und SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-auth0.html">Sichern eines Portalerlebnisses mit Auth0</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-okta.html">Sicherung eines Portalerlebnisses mit Okta</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/securing-portal-experience-ssl.html">Sicherung eines Portalerlebnisses mit SSL</a></li>
-                  
-                
-                  
-                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/develop/index.html">Entwickler <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/develop/page-experience-code-snippets.html">Code-Snippets zur Vor-Ort-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experiences-custom-css-reference.html">Benutzerdefinierte CSS-Referenz für In-Page Experi</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Einbetten von In-Page-Erlebnissen in ein CMS</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-api.html">Übersicht: API zur In-Page-Erfahrung</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/overview-page-experience-client-api.html">Übersicht: In-Page Experience Client API</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-api-error-reference.html">In-Page Experience API Fehlerreferenz</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/page-experience-client-api-sample.html">In-Page Experience Client-AP</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">Kurzanleitung: API für In-Page-Erlebnis-Plattform (REST)</a></li>
-                  
-                
-                  
-                    <li><a href="/develop/reference.html">API Referenz zur In-Page-Erfahrungsplattform</a></li>
-                  
-                
-                  
-                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">In-Page Experience Client-AP</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/training/index.html">Schulung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/training/gallery-training-videos.html">Fotogalerie Schulungsvideos</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-introduction-gallery.html">Schulung: Einführung in die Galerie</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Schulung: Erlebnisse im Bauportal</a></li>
-                  
-                
-                  
-                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Schulung: Aufbau von In-Page-Erlebnissen</a></li>
-                  
-                
-                  
-                    <li><a href="/training/brightcove-university.html">Schulungskurse der Brightcove University</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/release-notes/index.html">Versionsinformationen <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
-                    <li><a href="/release-notes/gallery-release-notes.html">Gallerie Versions</a></li>
-                  
-                
-                  
-                    <li><a href="/release-notes/gallery-template-release-notes.html">Gallery-Vorlage Versionsh</a></li>
-                  
-                
-              </ul>
-            
-          
-            
-              <h5 class="submenu-header"><a href="/support/index.html">unterstützung <strong>+</strong></a></h5>
-              <ul class="sidenav-submenu" style="display:none;">
-                
-                  
+                 
+                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Erstellen einer Portal-Erfahrung</a></li>
                     
-                  
-                
-                  
-                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Seite „Systemstatus von Brightcove“</a></li>
-                  
-                
-                  
-                    <li><a href="/support/contact-sales.html">Kontakt mit dem Vertrieb</a></li>
-                  
-                
-                  
-                    <li><a href="/support/opening-case-with-brightcove-support.html">Einen Supportfall öffnen</a></li>
-                  
-                
+                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Erstellen einer In-Page-Erfahrung</a></li>
+                    
+                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Erfahrungen erstellen und verwalten</a></li>
+                    
+                    <li><a href="/training/gallery-training-videos.html">Galerie-Schulungsvideos</a></li>
+                    
+                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Erste Schritte mit Brightcove Gallery</a></li>
+                    
+                    <li><a href="/get-started/overview-gallery-experiences.html">Überblick über Galerieerfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">Ausbildung: Einführung in die Galerie</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Ausbildung: Erstellen von Portal-Erfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Ausbildung: In-Page-Erlebnisse aufbauen</a></li>
+                   
               </ul>
-            
-          
+              
+              <h5 class="submenu-header"><a href="/experiences/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Erfahrungen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/experiences/portal/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Portal</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Hinzufügen von Video Cloud-Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-videos-portal-experience.html">Hinzufügen Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">Hinzufügen von YouTube-Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Ändern des Player-Layouts</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Handlungsaufforderungen konfigurieren</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Konfigurieren der SEO-Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-details-portal-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Konfigurieren der Nachverfolgung durch Dritte</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Portalerfahrungen erstellen, bearbeiten und veröffentlichen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Anpassen von Aussehen und Verhalten</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Anpassen der Katalogvorlageneinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Anpassen der Chronikvorlageneinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Anpassen des Inhalts von Portalseiten</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Anpassen der Einstellungen für Laufschriftvorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Anpassen der Player- und Lead-Formulareinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Anpassen der Site-Konfiguration</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Anpassen der Site-Funktionen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Anpassen der sozialen Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-style-portal-experience.html">Anpassen des Stils</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Anpassen der Video- und Wiedergabeeinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Anpassen der Videoeinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Herunterladen von Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Galerie-Lead-Daten</a></li>
+                            
+                            <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indizieren einer Portalerfahrung</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-gallery-portal-templates.html">Übersicht über Galerieportalvorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">Aktualisieren von Galerievorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
+                            
+                            <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">Verwenden von benutzerdefinierten Schriftarten</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen einer Erfahrung</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/inpage/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Auf Seite</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/inpage/adding-components-page-experience.html">Komponenten hinzufügen</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Interaktionen hinzufügen</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-videos-page-experience.html">Hinzufügen Videos</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Companion-Komponenten konfigurieren</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-details-page-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Konfigurieren der Einstellungen für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Konfigurieren von Video-Downloads</a></li>
+                            
+                            <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Benutzerdefinierte Themen erstellen</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-page-experience.html">Anpassen einer In-Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-style-page-experience.html">Anpassen des Stils</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">Übersicht über In-Page Experience-Vorlagen</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">Überblick: In-Page-Erlebnisse erstellen und veröffentlichen</a></li>
+                            
+                            <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">Analytics überprüfen</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">Überprüfen von Call-to-Action-Analysen</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">Überprüfen des Analytics-Dashboards</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">Überprüfen von Video Analytics</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">Aktualisieren von Galerievorlagen</a></li>
+                            
+                            <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">Verwenden dynamischer Videoüberschreibungen</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/live/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Live Veranstaltung</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Hinzufügen von Pigeonhole zu einer Live-In-Page</a></li>
+                            
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Hinzufügen einer Schublade zu einem Live-Portal</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-page-experience.html">Erstellen einer Live-Event-In-Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-portal-experience.html">Erstellen eines Live Event Portal-Erlebnisses</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Erstellen des Live-Ereignisstatus</a></li>
+                            
+                            <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Erstellen des Post-Event-Status</a></li>
+                            
+                            <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Erstellen des Pre-Event-Status</a></li>
+                            
+                            <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Anpassen der Live-Event-Portal-Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/landing/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Landing Page</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/landing/creating-landing-page-experience.html">Erstellen einer Landing Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Galerie-Lead-Daten</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen einer Erfahrung</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Allgemein</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/general/gallery-system-requirements.html">Systemanforderungen für die Galerie</a></li>
+                    
+                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Fehlerbehebung bei Problemen mit der Brightcove-Galerie</a></li>
+                    
+                    <li><a href="/general/brightcove-gallery-cookies.html">Cookies der Brightcove-Galerie</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/settings/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Galerieeinstellungen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/settings/configuring-gallery-settings.html">Galerieeinstellungen konfigurieren</a></li>
+                    
+                    <li><a href="/settings/configuring-youtube-settings.html">YouTube-Einstellungen konfigurieren</a></li>
+                    
+                    <li><a href="/settings/configuring-access-control-profiles.html">Konfigurieren von Zugriffssteuerungsprofilen</a></li>
+                    
+                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domänen und SSL</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-auth0.html">Sichern einer Portal-Erfahrung mit Auth0</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-okta.html">Sichern eines Portal-Erlebnisses mit Okta</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-ssl.html">Sichern einer Portal-Erfahrung mit SSL</a></li>
+                    
+                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/develop/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Entwickler</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/develop/page-experience-code-snippets.html">In-Page Experience Code-Snippets</a></li>
+                    
+                    <li><a href="/develop/page-experiences-custom-css-reference.html">In-Page Experience Benutzerdefinierte CSS-Referenz</a></li>
+                    
+                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Einbetten von In-Page-Erlebnissen in ein CMS</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-api.html">Überblick: In-Page-Experience API</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-client-api.html">Überblick: In-Page Experience Client-API</a></li>
+                    
+                    <li><a href="/develop/page-experience-api-error-reference.html">In-Page Experience API-Fehlerreferenz</a></li>
+                    
+                    <li><a href="/develop/page-experience-client-api-sample.html">Beispiel für eine In-Page Experience Client-API</a></li>
+                    
+                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">Schnellstart: REST-API (In-Page Experience Platform)</a></li>
+                    
+                    <li><a href="/develop/reference.html">In-Page Experience Platform-API-Referenz</a></li>
+                    
+                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">In-Page Experience Client-API-Referenz</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Ausbildung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/gallery-training-videos.html">Galerie-Schulungsvideos</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">Ausbildung: Einführung in die Galerie</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Ausbildung: Erstellen von Portal-Erfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Ausbildung: In-Page-Erlebnisse aufbauen</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Brightcove University Schulungskurse</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Versionshinweise</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/gallery-release-notes.html">Versionshinweise zur Galerie</a></li>
+                    
+                    <li><a href="/release-notes/gallery-template-release-notes.html">Versionshinweise zu Galerievorlagen</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Unterstützung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Brightcove-Systemstatusseite</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Öffnen eines Support-Falls</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">Setzen Sie Ihr Support-Portal-Passwort zurück</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">Wenden Sie sich an den Vertrieb</a></li>
+                   
+              </ul>
+             
       </nav>
     </div>
     <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
   <!-- bootstrap layout -->
-
-<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menü „Navigation"/></p>
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
 
 <!-- search bar -->
 <div id="nav-search-box" style="margin-top: 1rem;"></div>
 <!-- in-page navigation for narrow screens -->
 <details class="centered-inpage-nav" id="centered_inpage_nav">
-  <summary><h6 class="toc">Inhalt der Seite</h6></summary>
+  <summary><h6 class="toc">Seiteninhalt</h6></summary>
   <nav id="centered_toc"></nav>
   <ul id="centered_in_page_toc" class="list-none"></ul>
 </details>
 <!-- open in new tab/window -->
-<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="in neuem Tab öffnen" style="margin-top:4em;width: 1.5em;"/></a>
-
-
-
-  
-    
-
-
-<article class="bcls-article">
-  <h1>In-Page Experiences Benutzerdefinierte CSS-Referenz</h1>
-  <summary>In diesem Thema werden die CSS-Klassen beschrieben, die beim Erstellen von In-Page Experiences verwendet werden. Diese Informationen werden bereitgestellt, damit Sie Ihre Erlebnisse mit CSS weiter gestalten können.</summary>
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>  <article class="bcls-article">
+  <h1>In-Page-Erfahrungen Benutzerdefinierte CSS-Referenz</h1>
+  <summary>This topic outlines the CSS classes that are used when creating In-Page Experiences. This information is provided so you can further style your experiences using CSS.</summary>
   <section class="bcls-section">
-    <h2 id="styledcomponents">Gestylte Komponenten</h2>
-    <p>Diese CSS-Klassen gelten für Elemente, die über die Benutzeroberfläche gestaltet werden. &nbsp;Diese Stile können mit benutzerdefinierten CSS überschrieben werden, indem diese Klassen verwendet werden. &nbsp;Sie können die UI-Stile auch für benutzerdefiniertes HTML anwenden lassen, indem Sie diese Klassen verwenden. &nbsp;Diese Klassen sind stabil und sollten sich nicht zwischen den Vorlagenversionen ändern.</p>
+    <h2 id="styledcomponents">Gestaltete Komponenten</h2>
+    <p>Diese CSS-Klassen gelten für Elemente, die über die Benutzeroberfläche gestaltet werden. &nbsp;Diese Stile können mithilfe dieser Klassen mit benutzerdefiniertem CSS überschrieben werden. &nbsp;Mithilfe dieser Klassen können Sie die UI-Stile auch auf benutzerdefiniertes HTML anwenden. &nbsp;Diese Klassen sind stabil und sollten nicht zwischen Vorlagenversionen wechseln.</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-Stil global</td>
+          <td>ee-components-style-global</td>
           <td>Globales Styling für das Erlebnis</td>
         </tr>
         <tr>
-          <td>ee-components-Stil-Anker</td>
-          <td>Normales Linkstyling</td>
+          <td>ee-components-style-anchor</td>
+          <td>Normales Link-Styling</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-Navigation</td>
-          <td>Navigationslink-Styling (Zurück-Taste, Share-Button usw.)</td>
+          <td>ee-Komponenten-Stil-Navigation</td>
+          <td>Styling des Navigationslinks (Zurück-Schaltfläche, Freigabetaste usw.)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-VideoInfo</td>
-          <td>Gestaltung der Videoinformationsbox (Nicht-Overlay)</td>
+          <td>ee-components-style-videoInfo</td>
+          <td>Styling der Videoinformationsbox (ohne Überlagerung)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-VideoTitel</td>
-          <td>Styling von Videotiteln (Nicht-Overlay)</td>
+          <td>ee-components-style-videoTitle</td>
+          <td>Videotitel-Styling (ohne Überlagerung)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-VideoBeschreibung</td>
-          <td>Videobeschreibung Styling (Nicht-Overlay)</td>
+          <td>ee-components-style-videoDescription</td>
+          <td>Videobeschreibungsstyling (ohne Überlagerung)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-Overlay</td>
-          <td>Styling der Videoinformationsbox überlagern</td>
+          <td>ee-components-style-overlay</td>
+          <td>Überlagerung des Stils der Videoinformationsbox</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-OverlayTitel</td>
-          <td>Styling-Titel überlagern</td>
+          <td>ee-components-style-overlayTitle</td>
+          <td>Überlagern Sie das Styling von Videotiteln</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-ÜberlageBeschreibung</td>
-          <td>Styling der Overlay-Videobeschreibung</td>
+          <td>ee-components-style-overlayDescription</td>
+          <td>Überlagerung des Videobeschreibungsstils</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-Overlaybanner</td>
-          <td>Overlay-Banner-/Indikator-Styling (beobachtete Anzeige)</td>
+          <td>ee-components-style-overlayBanner</td>
+          <td>Overlay-Banner / Indikator-Styling (beobachteter Indikator)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Stil-Wiedergabetaste</td>
-          <td>Grundlegendes Styling der Wiedergabetaste (siehe die Play Button-Komponente für komplizierteres Styling)</td>
+          <td>ee-components-style-playButton</td>
+          <td>Grundlegendes Styling der Wiedergabetaste (ein komplexeres Styling finden Sie in der Play Button-Komponente.)</td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="bcls-section">
-    <h2 id="basecomponents">Basis-Komponenten</h2>
-    <p>Dies sind grundlegende Komponenten, die mit benutzerdefiniertem CSS gestaltet werden können. &nbsp;Die Komponentenklassen sind stabil und sollten sich nicht zwischen den Vorlagenversionen ändern. &nbsp;Die inneren Klassen sind relativ stabil und werden sich höchstwahrscheinlich nicht zwischen den Vorlagenversionen ändern.</p>
-    <h3>Play-Button</h3>
-    <p>Die Wiedergabetaste erscheint auf jedem Video-Miniaturbild.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-play-button.png"/></figure>
+    <h2 id="basecomponents">Basiskomponenten</h2>
+    <p>Dies sind grundlegende Komponenten, die mit benutzerdefiniertem CSS gestaltet werden können. &nbsp;Die Komponentenklassen sind stabil und sollten nicht zwischen Vorlagenversionen wechseln. &nbsp;Die inneren Klassen sind relativ stabil und ändern sich höchstwahrscheinlich nicht zwischen den Vorlagenversionen.</p>
+    <h3>Wiedergabetaste</h3>
+    <p>Die Wiedergabetaste wird auf jedem Video-Miniaturbild angezeigt.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-play-button.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-Play-Taste</td>
-          <td>Play-Tasten-Komponente</td>
+          <td>ee-Komponenten-Wiedergabetaste</td>
+          <td>Play-Button-Komponente</td>
         </tr>
         <tr>
           <td>ee-components-play-button-svg</td>
-          <td>SVG-Behälter</td>
+          <td>SVG-Container</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Gruppe</td>
-          <td>SVG-Innengruppe</td>
+          <td>ee-Komponenten-Play-Button-Gruppe</td>
+          <td>SVG innere Gruppe</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Tastenknopf</td>
-          <td>Play-Button SVG-Gruppe</td>
+          <td>ee-Komponenten-Play-Button-Button</td>
+          <td>Wiedergabetaste SVG-Gruppe</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Rahmen</td>
-          <td>Play-Button-Kreisrahmen</td>
+          <td>ee-Komponenten-Play-Button-Frame</td>
+          <td>Kreisrahmen der Wiedergabetaste</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Icon</td>
-          <td>Symbol „Wiedergeben“</td>
+          <td>ee-Komponenten-Play-Button-Symbol</td>
+          <td>Symbol für die Wiedergabetaste</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Countdown</td>
-          <td>Countdown SVG-Gruppe</td>
+          <td>ee-Komponenten-Play-Button-Countdown</td>
+          <td>Countdown-SVG-Gruppe</td>
         </tr>
         <tr>
           <td>ee-components-play-button-pause</td>
-          <td>Countdown-Pause-Symbol</td>
+          <td>Countdown-Pausensymbol</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Hintertexte</td>
+          <td>ee-Komponenten-Play-Button-Text</td>
           <td>Countdown-Text</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Track</td>
+          <td>ee-Komponenten-Play-Button-Track</td>
           <td>Countdown-Track</td>
         </tr>
         <tr>
-          <td>ee-components-Play-Button-Läufer</td>
+          <td>ee-Komponenten-Play-Button-Runner</td>
           <td>Countdown-Fortschritt</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
     <h3>Pfeil</h3>
-    <p>Pfeile für die Karussell-Vorlage (für Präsentationsoptionen mit einfacher und voller Blutung).</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-carousel-arrows.png"/></figure>
+    <p>Pfeile für die Karussellvorlage (für einfache und vollständige Präsentationsoptionen).</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-carousel-arrows.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
           <td>ee-Komponenten-Pfeil</td>
-          <td>Arrow-Komponente (einschließlich Hintergrund)</td>
+          <td>Pfeilkomponente (einschließlich Hintergrund)</td>
         </tr>
         <tr>
-          <td>ee-Komponenten-Pfeil-Innen</td>
+          <td>ee-komponenten-pfeil-inner</td>
           <td>Pfeil</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Als Nächstes</h3>
-    <p>Der Indikator „Nach oben“ wird auf großen Miniaturansichten angezeigt, wenn <strong>Automatisch Fortschritt zum nächsten Video</strong> in den Player-Einstellungen aktiviert ist.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-up-next.png"/></figure>
+    <h3>Als nächstes</h3>
+    <p>Die Anzeige Up-next wird bei großen Miniaturansichten angezeigt, wenn <strong>Fahren Sie automatisch mit dem nächsten Video fort</strong> ist in den Player-Einstellungen aktiviert.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-up-next.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-weiter</td>
-          <td>Nächste Komponente</td>
+          <td>ee-components-up-next</td>
+          <td>Nach oben Nächste Komponente</td>
         </tr>
         <tr>
-          <td>ee-components-das nächste Miniaturbild</td>
-          <td>Nächstes Video-Thumbnail</td>
+          <td>ee-components-up-next-thumbnail</td>
+          <td>Nächstes Video-Miniaturbild</td>
         </tr>
         <tr>
-          <td>ee-components-aktuellem</td>
+          <td>ee-components-up-next-text</td>
           <td>Nächster Text (Countdown + Videoname)</td>
         </tr>
         <tr>
-          <td>ee-components-aktuellsten text-countdown</td>
+          <td>ee-components-up-next-text-countdown</td>
           <td>Countdown-Text</td>
         </tr>
         <tr>
-          <td>ee-components-zu-als nächstes schliessen</td>
-          <td>Schaltfläche zum Schließen</td>
+          <td>ee-components-up-next-close</td>
+          <td>Schaltfläche Schließen</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Videoindikator angesehen</h3>
-    <p>Der überwachte Indikator wird angezeigt, wenn die Option in den Videoeinstellungen aktiviert ist.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-watched.png"/></figure>
+    <h3>Videoanzeige angesehen</h3>
+    <p>Die Anzeige "Überwacht" wird angezeigt, wenn die Option in den Videoeinstellungen aktiviert ist.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-watched.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Watched-Video-Banner</td>
-          <td>Videoindikator angesehen</td>
+          <td>ee-Komponenten-gesehen-Video-Banner</td>
+          <td>Videoanzeige angesehen</td>
         </tr>
       </tbody>
     </table>
@@ -756,244 +619,244 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="videocomponents">Videokomponenten</h2>
-    <p>Komponenten im Zusammenhang mit einzelnen Videos. Diese Klassen sind stabil und sollten nicht zwischen den Vorlagenversionen wechseln.</p>
-    <h3>Player</h3>
-    <p>Container für den Brightcove Spieler.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-player.png"/></figure>
+    <p>Komponenten für einzelne Videos. Diese Klassen sind stabil und sollten sich nicht zwischen Vorlagenversionen ändern.</p>
+    <h3>Spieler</h3>
+    <p>Container für den Brightcove-Player.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-player.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Spieler</td>
-          <td>Spieler-Container</td>
+          <td>ee-components-player</td>
+          <td>Spielercontainer</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Miniaturbild</h3>
-    <p>Grundcontainer für Videoplakatbilder (enthält nicht die Wiedergabetaste).</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail.png"/></figure>
+    <h3>Miniaturansicht</h3>
+    <p>Basiscontainer für Videoposterbilder (ohne Wiedergabetaste).</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Miniaturbild</td>
-          <td>Thumbnail-Container</td>
+          <td>ee-components-thumbnail</td>
+          <td>Miniaturbild-Container</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Video-Info</h3>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-info.png"/></figure>
+    <h3>Video Info</h3>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-info.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-info</td>
+          <td>ee-komponenten-video-info</td>
           <td>Video-Info-Container</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-inhalte</td>
+          <td>ee-Komponenten-Video-Info-Inhalt</td>
           <td>Innerer Video-Info-Container</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-name</td>
-          <td>Container für Videonamen</td>
+          <td>ee-Komponenten-Video-Info-Name</td>
+          <td>Video-Namenscontainer</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-name-inhalt</td>
+          <td>ee-Komponenten-Video-Info-Name-Inhalt</td>
           <td>Videoname</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-dauer</td>
+          <td>ee-Komponenten-Video-Info-Dauer</td>
           <td>Videodauer</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-beschreibung</td>
-          <td>Beschreibung der Videodaten</td>
+          <td>ee-Komponenten-Video-Info-Beschreibung</td>
+          <td>Videobeschreibung</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Video-Info-verknüpfter Link</td>
-          <td>Video verwandter Link</td>
+          <td>ee-Komponenten-Video-Info-Link</td>
+          <td>Video-Link</td>
         </tr>
         <tr>
-          <td>ee-components-video-info-download</td>
-          <td>Link zum Herunterladen von Videos</td>
+          <td>ee-Komponenten-Video-Info-Download</td>
+          <td>Video-Download-Link</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Video-Thumbnail</h3>
-    <p>Enthält eine mit einer Video-Info-Komponente umschlossene Thumbnail-Komponente.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-thumbnail.png"/></figure>
+    <h3>Video Miniaturansicht</h3>
+    <p>Enthält eine Thumbnail-Komponente, die mit einer Video-Info-Komponente umschlossen ist.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-thumbnail.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Video-Miniaturbild</td>
-          <td>Video-Thumbnail-Komponente</td>
+          <td>ee-components-video-thumbnail</td>
+          <td>Video-Miniaturbildkomponente</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
   </section>
   <section class="bcls-section">
-    <h2 id="videocollectioncomp">Komponenten der Video-Sammlung</h2>
-    <p>Komponenten im Zusammenhang mit Sammlungen von Videos (Wiedergabelisten usw.). Diese Klassen sind stabil und sollten sich nicht zwischen den Vorlagenversionen ändern.</p>
-    <h3>Abdecken Flow</h3>
+    <h2 id="videocollectioncomp">Videosammlungskomponenten</h2>
+    <p>Komponenten im Zusammenhang mit Videosammlungen (Wiedergabelisten usw.). Diese Klassen sind stabil und sollten nicht zwischen Vorlagenversionen wechseln.</p>
+    <h3>Deckungsfluss</h3>
     <p>Dreidimensionale Cover-Flow-Präsentation von Videos.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-coverflow.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-coverflow.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-Komponenten-Cover-Flow</td>
-          <td>Cover-Flow-Komponente</td>
+          <td>ee-Komponenten-Deckungsfluss</td>
+          <td>Durchflusskomponente abdecken</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Cover-Flow-Artikel</td>
-          <td>Cover-Flow-Element (Video-Thumbnail)</td>
+          <td>ee-Komponenten-Abdeckung-Flow-Artikel</td>
+          <td>Cover Flow-Element (Video-Miniaturansicht)</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Punkt-Streifen</h3>
-    <p>Ein Streifen von Punkten, der jedes Video in der Liste darstellt</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-dot-strip.png"/></figure>
+    <h3>Punktstreifen</h3>
+    <p>Ein Punktstreifen, der jedes Video in der Liste darstellt</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-dot-strip.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Punkt-Streifen</td>
-          <td>Dot-Strip-Komponente</td>
+          <td>ee-Komponenten-Punktstreifen</td>
+          <td>Punktstreifenkomponente</td>
         </tr>
         <tr>
-          <td>ee-components-Punkt-Streifen-Artikel</td>
-          <td>Punktstreifen Artikel</td>
+          <td>ee-Komponenten-Punkt-Streifen-Artikel</td>
+          <td>Punktstreifenelement</td>
         </tr>
         <tr>
-          <td>ee-Komponenten-Punkt-Streifen-Dot</td>
+          <td>ee-Komponenten-Punkt-Streifen-Punkt</td>
           <td>Einzelner Punkt im Streifen</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Plakat-Karussell</h3>
+    <h3>Plakatkarussell</h3>
     <p>Ein Karussell mit Plakatbildern (mit Pfeilen)</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-poster-carousel.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-poster-carousel.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Poster-Karussell</td>
-          <td>Komponente für Plakat-Karussell</td>
+          <td>ee-Komponenten-Poster-Karussell</td>
+          <td>Plakatkarussellkomponente</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Poster-Karussell-Container</td>
-          <td>Row-Container</td>
+          <td>ee-Komponenten-Poster-Karussell-Container</td>
+          <td>Zeilencontainer</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Poster-Karussell-Reihe</td>
-          <td>Poster-Reihe</td>
+          <td>ee-Komponenten-Poster-Karussell-Reihe</td>
+          <td>Plakatreihe</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Poster-Karussell-Zelle</td>
-          <td>Zeilenelement (Video-Thumbnail)</td>
+          <td>ee-Komponenten-Poster-Karussell-Zelle</td>
+          <td>Zeilenelement (Video-Miniaturansicht)</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Thumbnail-Streifen</h3>
-    <p>Ein Streifen von Thumbnail-Bildern (mit Pfeilen)</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail-strip.png"/></figure>
+    <h3>Vorschaubildstreifen</h3>
+    <p>Ein Streifen mit Miniaturbildern (mit Pfeilen)</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-thumbnail-strip.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Thumbnail-Streifen</td>
-          <td>Thumbnail-Streifen-Komponente</td>
+          <td>ee-components-thumbnail-strip</td>
+          <td>Miniaturbildstreifen-Komponente</td>
         </tr>
         <tr>
-          <td>ee-Komponenten-Thumbnail-Streifen-Container</td>
-          <td>Row-Container</td>
+          <td>ee-components-thumbnail-strip-container</td>
+          <td>Zeilencontainer</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Thumbnail-Streifen-Reihe</td>
-          <td>Thumbnail-Zeile</td>
+          <td>ee-components-thumbnail-strip-row</td>
+          <td>Vorschaubildreihe</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Thumbnail-Streifen-Zelle</td>
-          <td>Zeilenelement (Video-Thumbnail)</td>
+          <td>ee-Komponenten-Thumbnail-Strip-Zelle</td>
+          <td>Zeilenelement (Video-Miniaturansicht)</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Video-Raster</h3>
-    <p>Ein Raster von Miniaturbildern</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-grid.png"/></figure>
+    <h3>Videogitter</h3>
+    <p>Ein Raster mit Miniaturbildern</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-grid.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Video-Gitter</td>
-          <td>Videoraster-Komponente</td>
+          <td>ee-Komponenten-Video-Grid</td>
+          <td>Videogitterkomponente</td>
         </tr>
         <tr>
-          <td>ee-Komponenten-Video-Raster-Zelle</td>
+          <td>ee-Komponenten-Video-Grid-Zelle</td>
           <td>Rasterelement (Video-Miniaturansicht)</td>
         </tr>
       </tbody>
@@ -1001,23 +864,23 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>&nbsp;</p>
     <h3>Videoliste</h3>
     <p>Eine vertikale Liste von Miniaturbildern</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-list.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-video-list.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-video-liste</td>
-          <td>Videolisten-Komponente</td>
+          <td>ee-Komponenten-Video-Liste</td>
+          <td>Videolistenkomponente</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Video-Liste-Artikel</td>
-          <td>Listenelement (Video-Thumbnail)</td>
+          <td>ee-Komponenten-Video-Listenelement</td>
+          <td>Listenelement (Video-Miniaturansicht)</td>
         </tr>
       </tbody>
     </table>
@@ -1025,144 +888,144 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="sharingcomponents">Komponenten teilen</h2>
-    <p>Komponenten im Zusammenhang mit Social Sharing. &nbsp;Die Share Button-Klassen sind relativ stabil und werden höchstwahrscheinlich nicht zwischen den Vorlagenversionen geändert. &nbsp;Die Share Panel-Klassen werden höchstwahrscheinlich in naher Zukunft geändert und sollten als instabil betrachtet werden.</p>
-    <h3>Schaltfläche „Teilen“</h3>
-    <p>Schaltfläche oder Symbole teilen.</p>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-button.png"/></figure>
+    <p>Komponenten im Zusammenhang mit Social Sharing. &nbsp;Die Share Button-Klassen sind relativ stabil und ändern sich höchstwahrscheinlich nicht zwischen den Vorlagenversionen. &nbsp;Die Share Panel-Klassen werden höchstwahrscheinlich in naher Zukunft geändert und sollten als instabil angesehen werden.</p>
+    <h3>Teilen Knopf</h3>
+    <p>Teilen-Schaltfläche oder Symbole.</p>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-button.png" /></figure>
     oder
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-icons.png"/></figure>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-icons.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-Share-Button</td>
-          <td>Knopf-Komponente teilen</td>
+          <td>ee-components-share-button</td>
+          <td>Teilen Sie die Schaltflächenkomponente</td>
         </tr>
         <tr>
-          <td>ee-components-Share-Knopf</td>
-          <td>Schaltfläche „Teilen“ (keine Symbole)</td>
+          <td>ee-components-share-button-button</td>
+          <td>Teilen-Schaltfläche (keine Symbole)</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Bedienfeld „Frei</h3>
-    <p>Freigabefenster, wenn die Anzeige von Social Sharing auf Schaltfläche eingestellt ist.</p>
-    <aside class="bcls-aside bcls-aside--information">Hinweis: Diese Klassen können sich in Zukunft ändern.</aside>
-    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-panel.png"/></figure>
+    <h3>Freigabepanel</h3>
+    <p>Freigabebereich, wenn die Anzeige für die Freigabe von sozialen Netzwerken auf die Schaltfläche eingestellt ist.</p>
+    <aside class="bcls-aside bcls-aside--information">Hinweis: Diese Kurse können sich in Zukunft ändern.</aside>
+    <figure class="bcls-figure"><img alt="" src="/assets/images/develop/node16850-share-panel.png" /></figure>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-Share-Wrapper-Panel</td>
+          <td>ee-components-share-wrapper-panel</td>
           <td>Panel-Wrapper-Komponente</td>
         </tr>
         <tr>
-          <td>ee-components-aktie-wrapper-innen</td>
+          <td>ee-components-share-wrapper-inner</td>
           <td>Panel</td>
         </tr>
         <tr>
-          <td>ee-components-Share-wrapper-close</td>
-          <td>Schaltfläche zum Schließen</td>
+          <td>ee-components-share-wrapper-close</td>
+          <td>Schaltfläche Schließen</td>
         </tr>
         <tr>
-          <td>ee-components-Share-Wrapper-Artikel</td>
+          <td>ee-components-share-wrapper-item</td>
           <td>Artikel teilen</td>
         </tr>
         <tr>
-          <td>ee-components-Share-wrapper-item-name</td>
-          <td>Artikelnamen teilen</td>
+          <td>ee-components-share-wrapper-item-name</td>
+          <td>Teilen Sie den Artikelnamen</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
   </section>
   <section class="bcls-section">
-    <h2 id="editablecomponents">Editierbare Komponenten</h2>
-    <p>Komponenten, die über die Plus-Schaltflächen in der Benutzeroberfläche zum Erlebnis hinzugefügt werden können. &nbsp;Diese Klassen sind stabil und sollten sich nicht zwischen den Vorlagenversionen ändern. &nbsp;Screenshots für diese Komponenten werden nicht bereitgestellt, da ihr Aussehen stark von den vom Benutzer eingegebenen Inhalten abhängt.</p>
-    <h3>Advertisement</h3>
-    <p>Werbe-Komponente</p>
+    <h2 id="editablecomponents">Bearbeitbare Komponenten</h2>
+    <p>Komponenten, die über die Plus-Schaltflächen in der Benutzeroberfläche zur Erfahrung hinzugefügt werden können. &nbsp;Diese Klassen sind stabil und sollten nicht zwischen Vorlagenversionen wechseln. &nbsp;Screenshots für diese Komponenten werden nicht bereitgestellt, da ihr Aussehen stark von dem vom Benutzer eingegebenen Inhalt abhängt.</p>
+    <h3>Werbung</h3>
+    <p>Werbekomponente</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Werbung</td>
-          <td>Werbe-Komponente</td>
+          <td>ee-Komponenten-Werbung</td>
+          <td>Werbekomponente</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Custom HTML</h3>
+    <h3>Benutzerdefiniertes HTML</h3>
     <p>Benutzerdefinierte HTML-Komponente</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-Komponenten-HTML</td>
+          <td>ee-components-html</td>
           <td>Benutzerdefinierte HTML-Komponente</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
-    <h3>Image</h3>
-    <p>Image-Komponente</p>
+    <h3>Bild</h3>
+    <p>Bildkomponente</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Bild</td>
-          <td>Image-Komponente</td>
+          <td>ee-Komponenten-Bild</td>
+          <td>Bildkomponente</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Bild-Bild</td>
+          <td>ee-Komponenten-Bild-Bild</td>
           <td>Internes Bild</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
     <h3>Text</h3>
-    <p>Text-Komponente</p>
+    <p>Textkomponente</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>EE-Komponenten-Text</td>
-          <td>Text-Komponente</td>
+          <td>ee-Komponenten-Text</td>
+          <td>Textkomponente</td>
         </tr>
       </tbody>
     </table>
@@ -1173,13 +1036,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-Komponenten-twitter</td>
+          <td>ee-components-twitter</td>
           <td>Twitter-Komponente</td>
         </tr>
       </tbody>
@@ -1188,40 +1051,38 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="globalclasses">Globale Klassen</h2>
-    <p>Dies sind Klassen, die global für die Erfahrung sind. &nbsp;Diese Klassen sind stabil und sollten sich nicht zwischen den Vorlagenversionen ändern.</p>
+    <p>Dies sind Klassen, die für die Erfahrung global sind. &nbsp;Diese Klassen sind stabil und sollten nicht zwischen Vorlagenversionen wechseln.</p>
     <p>&nbsp;</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
-          <th>Die Klasse</th>
+          <th>Klasse</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
       <tbody class="bcls-table__body">
         <tr>
-          <td>ee-components-App</td>
-          <td>Element der äußersten Erfahrung</td>
+          <td>ee-komponenten-app</td>
+          <td>Äußerstes Erfahrungselement</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Sicht</td>
-          <td>Erlebnisansicht (Seite, Lightbox)</td>
+          <td>ee-Komponenten-Ansicht</td>
+          <td>Erlebnisansicht (In-Page, Leuchtkasten)</td>
         </tr>
         <tr>
-          <td>EE-Komponenten-Container</td>
-          <td>Plus-Tasten-Komponentencontainer</td>
+          <td>ee-Komponenten-Container</td>
+          <td>Plus-Button-Komponentencontainer</td>
         </tr>
       </tbody>
     </table>
     <p>&nbsp;</p>
   </section>
-</article>
-
-<!-- complete bootstrap layout -->
+</article> <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
       
       <nav class="right-side-nav" id="right_side_nav">
-        <h6 class="toc">Inhalt der Seite</h6>
+        <h6 class="toc">Seiteninhalt</h6>
         <ul id="in_page_nav" class="list-none"></ul>
       </nav>
       
@@ -1230,35 +1091,42 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  Seite zuletzt aktualisiert am 14 Feb 2022
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
 
-        <h2>Brightcove Support-Service</h2>
+        <h2>Brightcove-Unterstützung</h2>
 
         <ul class="menu">
           <li>
             <a href="https://status.brightcove.com">Systemstatus</a>
           </li>
           <li>
-            <a href="https://supportportal.brightcove.com/s/login/?">Kontakt mit dem Support</a>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktieren Sie Support</a>
           </li>
           <li>
-            <a href="https://support.brightcove.com/">DOKUMENTATION</a>
+            <a href="https://support.brightcove.com/">Dokumentation</a>
           </li>
         </ul>
 
       </nav>
       <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
 
-        <h2>Schulungen</h2>
+        <h2>Ausbildung</h2>
 
         <ul class="menu">
           <li>
-            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online-Kurse</a>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Kurse</a>
           </li>
           <li>
-            <a href="https://studio.support.brightcove.com/training/register-training.html">Für einen Kurs anmelden</a>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Melden Sie sich für einen Kurs an</a>
           </li>
           <li>
             <a href="https://university.brightcove.com/">Brightcove Universität</a>
@@ -1268,11 +1136,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </nav>
       <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
 
-        <h2>Brightcove</h2>
+        <h2>Helle Bucht</h2>
 
         <ul class="menu">
           <li>
-            <a href="https://www.brightcove.com">brightcove.com</a>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
           </li>
           <li>
             <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
@@ -1289,10 +1157,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td>
               <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
             </td>
-            <td><a href="https://www.brightcove.com/en/legal/privacy">Privacy</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Allgemeine Geschäftsbedingungen</a></td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privatsphäre</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; amp; Bedingungen</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
                 </div>
               </div>
             </td>
@@ -1303,27 +1171,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
-  var searchBox = sajari.init({
-    mode: "search-box",
-    project: "1588255093746585379", // Set this to your project.
-    collection: "brightcove-documenation", // Set this to your collection.
-    instantPipeline: "autocomplete", // Pipeline used as you type
-    inputPlaceholder: "Search", // Input element placeholder
-    maxSuggestions: 5, // Maximum number of suggestions to show
-    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
-  });
-  
-    searchBox("sub", "pipeline.search-sent", function (_, query) {
-      window.location = "/search.html?q=" + encodeURIComponent(query.q);
-    });
+  var searchBox = sajari.init({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }); searchBox("sub", "pipeline.search-sent", Funktion (_, Abfrage) { window.location = "/search.html?q=" + encodeURIComponent(query.q); });
   
 
-</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
@@ -1341,34 +1194,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   
   <script src="/assets/js/sajari-search-foot.js"></script>
   
+  <script>
+  feder.replace()
+</script>
   <!-- <script src="/assets/js/sajari-index.js"></script> -->
   <style>
-    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
-      background-color: lightblue;
-    }
-    div.sj-tabs__tab {
-      margin-top: 3rem;
-      margin-left: .3rem;
-      border-top-left-radius: .4rem;
-      border-top-right-radius: .4rem;
-      background-color:#e8e8e8;
-    }
-
-    div.sj-tabs__tab.sj-tabs__tab--selected {
-      border-bottom-color: crimson;
-      background-color: #f8f8f8;
-    }
-
-    p.sj-results__result__description.css-p9jvyt {
-      font-size: 1rem;
-    }
-
-    .sj-result__text.css-31l7gp h3 {
-      color: navy;
-      font-size: 1.4rem;
-    }
+    a.sj-paginator__page-number.sj-paginator__seitenzahl—current.css-so0ov7 { background-color: lightblue; } div.sj-tabs__tab { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } { border-bottom-color: crimson; background-color: #f8f8f8; } div.sj-tabs__tabs__tabs__tabs__tabs__tabs__tabs__tabs__tabs__tab div.sj-result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text. css-31l7gp h3 { color: navy; font-size: 1.4rem; }
     </style>
 
 </body>
 
-</html>
+</html> 

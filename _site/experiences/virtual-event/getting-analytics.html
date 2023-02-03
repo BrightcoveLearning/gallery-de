@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="In this topic you will learn how to export virtual event viewer data.">
+  
+  <title>Exportieren der Datenbeschreibung der virtuellen</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || []; Funktion gtag(){dataLayer.push(arguments);} gtag('js', neues Datum()); gtag('config', 'UA-2728311-17');
+</script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+ <header>
+  <div class="div-header">
+    <a href="/"><span class="product-logo" style="font-size:32px;max-width:400px;font-weight:normal;color:rgb(8, 8, 140);">BRIGHTCOVE GALERIE<sup>&trade;</sup></span></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Sprache auswählen</option><option value="en|en" translate="No">Englisch</option><option value="en|zh-TW" translate="No">繁體 中文</option><option value="en|fr" translate="No">Französisch</option><option value="en|de" translate="No">Deutsch</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Spanisch</option></select>
+
+<script>
+/*<![CDATA[ */ Funktion dogTranslate (lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;} /*]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><i data-feather="help-circle"></i> Support kontaktieren</a> <span style="vertical-align: middle;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><i data-feather="cloud"></i> Systemstatus</a></span>
+    <br>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item first-item"><a href="/">Zuhause</a></li>
+        
+      <li class="breadcrumb-item"><a href="/experiences/virtual-event/">Virtual Event</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Exportieren der Datenbeschreibung der virtuellen</li>
+    </ol>
+  </nav>
+</header> <div class="container">
+    <div class="row">
+      <div class="col-sm-3 left-side-bar">
+				<select id="site_select" class="bcls-select" style="margin-left: 1rem;">
+					<option value="">Weitere Brightcove Docs</option>
+					 
+							<option value="https://support.brightcove.com">Dokumentationsstartseite</option>
+						  
+							<option value="">-- VIDEO-CLOUD --</option>
+						  
+							<option value="https://studio.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+						  
+							<option value="https://player.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player-Entwicklung</option>
+						  
+							<option value="https://apis.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;APIs der Video Cloud-Plattform</option>
+						  
+							<option value="https://sdks.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud-Geräte-SDKs</option>
+						  
+							<option value="https://integrations.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Integrationen und CMS-Konnektoren</option>
+						  
+							<option value="https://general.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Allgemeine Informationen zu Video Cloud</option>
+						  
+							<option value="">-- VIDEO-ESSENTIALS --</option>
+						  
+							<option value="https://beacon.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Leuchtfeuer</option>
+						  
+							<option value="https://live.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+						  
+							<option value="https://zencoder.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+						  
+							<option value="">-- VIDEO-CLOUD-ADD-ONS --</option>
+						  
+							<option value="https://campaign.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Kampagne</option>
+						  
+							<option value="https://engage.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Engagement</option>
+						  
+							<option value="https://gallery.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove-Galerie</option>
+						  
+							<option value="https://studio.support.brightcove.com/social/index.html">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+						  
+							<option value="https://ssai.support.brightcove.com">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+						 
+				</select>
+        <nav class="sidenav" id="side_nav">
+           
+            <h5><a href="/index.html">Zuhause</a></h5>
+              
+              <h5 class="submenu-header"><a href="/get-started/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Einstieg</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/get-started/step-step-creating-and-publishing-portal-experience.html">Erstellen einer Portal-Erfahrung</a></li>
+                    
+                    <li><a href="/get-started/step-step-creating-and-publishing-page-experience.html">Erstellen einer In-Page-Erfahrung</a></li>
+                    
+                    <li><a href="/get-started/creating-and-managing-gallery-experiences.html">Erfahrungen erstellen und verwalten</a></li>
+                    
+                    <li><a href="/training/gallery-training-videos.html">Galerie-Schulungsvideos</a></li>
+                    
+                    <li><a href="/get-started/getting-started-brightcove-gallery.html">Erste Schritte mit Brightcove Gallery</a></li>
+                    
+                    <li><a href="/get-started/overview-gallery-experiences.html">Überblick über Galerieerfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">Ausbildung: Einführung in die Galerie</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Ausbildung: Erstellen von Portal-Erfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Ausbildung: In-Page-Erlebnisse aufbauen</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/experiences/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Erfahrungen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li class="submenu-header">
+                      <a href="/experiences/portal/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Portal</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/adding-video-cloud-videos-portal-experience.html">Hinzufügen von Video Cloud-Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-videos-portal-experience.html">Hinzufügen Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/adding-youtube-videos-portal-experience.html">Hinzufügen von YouTube-Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/portal/changing-player-layout-portal-experience.html">Ändern des Player-Layouts</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-calls-action-portal-experience.html">Handlungsaufforderungen konfigurieren</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html">Konfigurieren der SEO-Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-details-portal-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/portal/configuring-third-party-tracking-portal-experience.html">Konfigurieren der Nachverfolgung durch Dritte</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-creating-editing-and-publishing-portal-experiences.html">Portalerfahrungen erstellen, bearbeiten und veröffentlichen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-appearance-and-behavior-portal-experience.html">Anpassen von Aussehen und Verhalten</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-catalogue-template-settings.html">Anpassen der Katalogvorlageneinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-chronicle-template-settings.html">Anpassen der Chronikvorlageneinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-content-portal-experience-pages.html">Anpassen des Inhalts von Portalseiten</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-marquee-template-settings.html">Anpassen der Einstellungen für Laufschriftvorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-player-and-lead-form-settings-portal-experience.html">Anpassen der Player- und Lead-Formulareinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-configuration-portal-experience.html">Anpassen der Site-Konfiguration</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-site-features-portal-experience.html">Anpassen der Site-Funktionen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-social-settings-portal-experience.html">Anpassen der sozialen Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-style-portal-experience.html">Anpassen des Stils</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-and-playback-settings-portal-experience.html">Anpassen der Video- und Wiedergabeeinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/customizing-video-settings-portal-experience.html">Anpassen der Videoeinstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/downloading-videos-portal-experience.html">Herunterladen von Videos</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Galerie-Lead-Daten</a></li>
+                            
+                            <li><a href="/experiences/portal/indexing-gallery-portal-experience.html">Indizieren einer Portalerfahrung</a></li>
+                            
+                            <li><a href="/experiences/portal/overview-gallery-portal-templates.html">Übersicht über Galerieportalvorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">Aktualisieren von Galerievorlagen</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
+                            
+                            <li><a href="/experiences/portal/using-custom-fonts-portal-experience.html">Verwenden von benutzerdefinierten Schriftarten</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen einer Erfahrung</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/inpage/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Auf Seite</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/inpage/adding-components-page-experience.html">Komponenten hinzufügen</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-interactions-page-experience.html">Interaktionen hinzufügen</a></li>
+                            
+                            <li><a href="/experiences/inpage/adding-videos-page-experience.html">Hinzufügen Videos</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-companion-components-page-experience.html">Companion-Komponenten konfigurieren</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-details-page-experience.html">Konfigurieren der Details für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-settings-page-experience.html">Konfigurieren der Einstellungen für ein Erlebnis</a></li>
+                            
+                            <li><a href="/experiences/inpage/configuring-video-downloads-page-experience.html">Konfigurieren von Video-Downloads</a></li>
+                            
+                            <li><a href="/experiences/inpage/creating-custom-themes-page-experiences.html">Benutzerdefinierte Themen erstellen</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-page-experience.html">Anpassen einer In-Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/inpage/customizing-style-page-experience.html">Anpassen des Stils</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-gallery-page-experience-templates.html">Übersicht über In-Page Experience-Vorlagen</a></li>
+                            
+                            <li><a href="/experiences/inpage/overview-creating-editing-and-publishing-page-experiences.html">Überblick: In-Page-Erlebnisse erstellen und veröffentlichen</a></li>
+                            
+                            <li><a href="/experiences/inpage/previewing-and-publishing-page-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics.html">Analytics überprüfen</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-calls-action-analytics.html">Überprüfen von Call-to-Action-Analysen</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-analytics-dashboard.html">Überprüfen des Analytics-Dashboards</a></li>
+                            
+                            <li><a href="/experiences/inpage/reviewing-page-experience-video-analytics.html">Überprüfen von Video Analytics</a></li>
+                            
+                            <li><a href="/experiences/portal/updating-gallery-templates.html">Aktualisieren von Galerievorlagen</a></li>
+                            
+                            <li><a href="/experiences/inpage/using-dynamic-video-overrides-page-experience.html">Verwenden dynamischer Videoüberschreibungen</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/live/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Live Veranstaltung</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-page-experience.html">Hinzufügen von Pigeonhole zu einer Live-In-Page</a></li>
+                            
+                            <li><a href="/experiences/live/adding-pigeonhole-live-event-portal-experience.html">Hinzufügen einer Schublade zu einem Live-Portal</a></li>
+                            
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/portal/controlling-access-portal-experience.html">Zugriff kontrollieren</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-page-experience.html">Erstellen einer Live-Event-In-Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-portal-experience.html">Erstellen eines Live Event Portal-Erlebnisses</a></li>
+                            
+                            <li><a href="/experiences/live/creating-live-event-state-portal-event-experience.html">Erstellen des Live-Ereignisstatus</a></li>
+                            
+                            <li><a href="/experiences/live/creating-post-event-state-portal-event-experience.html">Erstellen des Post-Event-Status</a></li>
+                            
+                            <li><a href="/experiences/live/creating-pre-event-state-portal-event-experience.html">Erstellen des Pre-Event-Status</a></li>
+                            
+                            <li><a href="/experiences/live/customizing-live-event-portal-settings.html">Anpassen der Live-Event-Portal-Einstellungen</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                           
+                      </ul>
+                    </li>
+                    
+                    <li class="submenu-header">
+                      <a href="/experiences/landing/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Landing Page</a>
+                      <ul class="sidenav-subsubmenu" style="display:none;">
+                         
+                            <li><a href="/experiences/portal/assigning-custom-domain-portal-experience.html">Zuweisen einer benutzerdefinierten Domäne</a></li>
+                            
+                            <li><a href="/experiences/landing/creating-landing-page-experience.html">Erstellen einer Landing Page-Erfahrung</a></li>
+                            
+                            <li><a href="/experiences/portal/exporting-gallery-lead-data.html">Exportieren von Galerie-Lead-Daten</a></li>
+                            
+                            <li><a href="/experiences/portal/previewing-and-publishing-portal-experience.html">Vorschau und Veröffentlichung</a></li>
+                            
+                            <li><a href="/experiences/portal/using-lead-form-portal-experience.html">Verwenden eines Lead-Formulars</a></li>
+                            
+                            <li><a href="/experiences/portal/using-site-editor-customize-portal-experience.html">Verwenden des Site-Editors zum Anpassen einer Erfahrung</a></li>
+                           
+                      </ul>
+                    </li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/general/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Allgemein</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/general/gallery-system-requirements.html">Systemanforderungen für die Galerie</a></li>
+                    
+                    <li><a href="/general/troubleshooting-brightcove-gallery-issues.html">Fehlerbehebung bei Problemen mit der Brightcove-Galerie</a></li>
+                    
+                    <li><a href="/general/brightcove-gallery-cookies.html">Cookies der Brightcove-Galerie</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/settings/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Galerieeinstellungen</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/settings/configuring-gallery-settings.html">Galerieeinstellungen konfigurieren</a></li>
+                    
+                    <li><a href="/settings/configuring-youtube-settings.html">YouTube-Einstellungen konfigurieren</a></li>
+                    
+                    <li><a href="/settings/configuring-access-control-profiles.html">Konfigurieren von Zugriffssteuerungsprofilen</a></li>
+                    
+                    <li><a href="/settings/configuring-custom-domains-and-ssl.html">Konfigurieren von benutzerdefinierten Domänen und SSL</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-auth0.html">Sichern einer Portal-Erfahrung mit Auth0</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-okta.html">Sichern eines Portal-Erlebnisses mit Okta</a></li>
+                    
+                    <li><a href="/settings/securing-portal-experience-ssl.html">Sichern einer Portal-Erfahrung mit SSL</a></li>
+                    
+                    <li><a href="/settings/configuring-single-sign-active-directory-federation-services.html">Konfigurieren von Single Sign-On mit ADFS</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/develop/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Entwickler</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/develop/page-experience-code-snippets.html">In-Page Experience Code-Snippets</a></li>
+                    
+                    <li><a href="/develop/page-experiences-custom-css-reference.html">In-Page Experience Benutzerdefinierte CSS-Referenz</a></li>
+                    
+                    <li><a href="/develop/embedding-brightcove-page-experiences-cms.html">Einbetten von In-Page-Erlebnissen in ein CMS</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-api.html">Überblick: In-Page-Experience API</a></li>
+                    
+                    <li><a href="/develop/overview-page-experience-client-api.html">Überblick: In-Page Experience Client-API</a></li>
+                    
+                    <li><a href="/develop/page-experience-api-error-reference.html">In-Page Experience API-Fehlerreferenz</a></li>
+                    
+                    <li><a href="/develop/page-experience-client-api-sample.html">Beispiel für eine In-Page Experience Client-API</a></li>
+                    
+                    <li><a href="/develop/quick-start-page-experience-platform-rest-api.html">Schnellstart: REST-API (In-Page Experience Platform)</a></li>
+                    
+                    <li><a href="/develop/reference.html">In-Page Experience Platform-API-Referenz</a></li>
+                    
+                    <li><a href="https://docs.brightcove.com/in-page-exerience-client-api/ClientApi.html">In-Page Experience Client-API-Referenz</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/training/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Ausbildung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/training/gallery-training-videos.html">Galerie-Schulungsvideos</a></li>
+                    
+                    <li><a href="/training/training-demand-introduction-gallery.html">Ausbildung: Einführung in die Galerie</a></li>
+                    
+                    <li><a href="/training/training-demand-building-portal-experiences-using-gallery.html">Ausbildung: Erstellen von Portal-Erfahrungen</a></li>
+                    
+                    <li><a href="/training/training-demand-building-page-experiences-using-gallery.html">Ausbildung: In-Page-Erlebnisse aufbauen</a></li>
+                    
+                    <li><a href="/training/brightcove-university.html">Brightcove University Schulungskurse</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/release-notes/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Versionshinweise</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/release-notes/gallery-release-notes.html">Versionshinweise zur Galerie</a></li>
+                    
+                    <li><a href="/release-notes/gallery-template-release-notes.html">Versionshinweise zu Galerievorlagen</a></li>
+                   
+              </ul>
+              
+              <h5 class="submenu-header"><a href="/support/index.html"><span style="color:#8E9093">+</span>&nbsp;&nbsp;Unterstützung</a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                 
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Anzeigen der Brightcove-Systemstatusseite</a></li>
+                    
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Öffnen eines Support-Falls</a></li>
+                    
+                    <li><a href="/support/reset-support-portal-password.html">Setzen Sie Ihr Support-Portal-Passwort zurück</a></li>
+                    
+                    <li><a href="/support/contact-sales.html">Wenden Sie sich an den Vertrieb</a></li>
+                   
+              </ul>
+             
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+ <p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Navigation Menu"></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Seiteninhalt</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="open in new tab" style="margin-top:4em;width: 1.5em;"></a>   <h1>Exportieren der Datenbeschreibung der virtuellen</h1>
+<article class="bcls-article">
+  <summary>In this topic you will learn how to export virtual event viewer data.</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">Einführung</h2>
+    <p>Sie können Berichtsereignisse für Ihre virtuellen Ereignisse nach Gerät und Standort aggregieren, zusätzlich zu den Konto-, Viewer- und Videoanalysen für ein bestimmtes Konto. Mithilfe dieser Informationen können Sie Ihre bevorstehenden virtuellen Ereignisse besser organisieren, um das Engagement der Zuschauer zu maximieren.</p>
+    <p>Diese Daten können mithilfe der Analytics-API heruntergeladen und im JSON-, CSV- oder XLXS-Format zurückgegeben werden. Der nächste Abschnitt enthält eine kurze Einführung in die Analytics-API. Wenn Sie bereits wissen, wie man es verwendet, können Sie zum folgenden Abschnitt springen, um Informationen zum Abrufen von Analysedaten für virtuelle Ereignisse zu erhalten.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Analytics_API">Die Analytics-API</h2>
+    <p>Wie andere <a href="https://apis.support.brightcove.com/">Plattform-APIs</a> Die Analytics-API ist eine RESTful-API, mit der Sie programmgesteuert mit der Video Cloud-Plattform interagieren können. Es gibt Analysedaten basierend auf verschiedenen URL-Parametern zurück, die Sie der Anforderung hinzufügen. Standardmäßig werden die Daten im JSON-Format zurückgegeben. Sie können jedoch anfordern, dass CSV- oder XLXS-Daten stattdessen in der Tabellenkalkulations-App geöffnet werden.</p>
+    <aside class="bcls-aside bcls-aside--information">Beachten Sie, dass dieses Dokument nur das behandelt, was Sie wissen müssen, um Analysedaten für virtuelle Ereignisse zu erhalten. Weitere Verwendungszwecke finden Sie in der allgemeinen <a href="https://apis.support.brightcove.com/analytics-api/index.html">Analytics API-Dokumentation</a>.</aside>
+    <h3>So stellen Sie Anfragen</h3>
+    <p>Anfragen an RESTful-APIs werden an eine URL gestellt, genauso wie ein Browser eine Anfrage an eine URL stellt, um eine Webseite abzurufen. Sie können die API-Anforderung jedoch nicht einfach in einen Browser einfügen, da die Anforderung authentifiziert werden muss (wir kommen dazu), um zu zeigen, dass Sie zum Abrufen der Daten berechtigt sind. Es gibt jedoch viele Tools, die Ihnen dabei helfen. Hier ist eine kurze Liste:</p>
+    <ul>
+      <li><a href="https://apis.support.brightcove.com/general/use-insomnia-api-requests.html">Schlaflosigkeit</a> (eine beliebte plattformübergreifende App)</li>
+      <li><a href="https://apis.support.brightcove.com/general/use-postman-api-requests.html">Postbote</a> (eine weitere beliebte plattformübergreifende App)</li>
+      <li><a href="https://apis.support.brightcove.com/general/concepts-api-tester.html">Online API Tester</a> erstellt von Brightcove Learning Services</li>
+      <li><a href="https://apis.support.brightcove.com/getting-started/concepts-testing-tools-brightcove-apis.html#shell">api-tester.sh</a> (Ein Curl-basiertes Shell-Skript, das von Brightcove Learning Services erstellt wurde.)</li>
+    </ul>
+    <h3>Anfragen authentifizieren</h3>
+    <p>Zum Schutz Ihrer Daten müssen Analytics-API-Anforderungen einen Autorisierungsheader enthalten, der ein Zugriffstoken enthält:</p>
+    <pre><code class="language-http" translate="No">Authorization: bearer <span class="bcls-input">your access token</span></code></pre>
+    <p>Wie erhalten Sie das Zugriffstoken? Sie können alles darüber in lesen <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Ein Zugriffstoken erhalten</a> Die kurze Antwort lautet jedoch, dass nach einer kleinen Vorbereitung jedes der oben aufgeführten Tools (und viele andere) diese für Sie bereitstellt.</p>
+    <p>Die Vorbereitung besteht darin, <strong>Client-Anmeldeinformationen abzurufen</strong>, die aus einer <code translate="no">client_id</code> und einem <code translate="no">client_secret bestehen</code>. Sie können diese mit dem erhalten <a href="https://studio.brightcove.com/products/videocloud/admin/oauthsettings">Studio Admin Seite</a> (Sie müssen ein Administrator in Ihrem Konto sein oder einen Administrator beauftragen, dies zu tun):</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Klicken <span class="button-blue">Neue Anwendung registrieren</span>.</li>
+      <li>Geben Sie im daraufhin angezeigten Dialogfeld "Analytics" als Namen ein.</li>
+      <li>Wählen Sie die Konten aus, für die Sie die API verwenden möchten.</li>
+      <li>
+        Unter <strong>Offengelegte Brightcove-APIs</strong> , auswählen <strong>Lesen</strong> unter <strong>Analytik</strong> und <strong>Video lesen</strong> unter <strong>CMS</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/experiences/virtual-event/analytics-api-permissions.png" alt="API Permissions">
+          <figcaption class="bcls-caption--image">API-Berechtigungen</figcaption>
+        </figure>
+      </li>
+      <li>Klicken <span class="button-blue">speichern</span>.</li>
+      <li>
+        In einem neuen Dialogfeld wird das angezeigt <strong>Kunden ID</strong> <strong>Kundengeheimnis</strong>. Kopieren und speichern Sie sie beide an einem sicheren Ort, an dem Sie sie wieder finden können. <aside class="bcls-aside bcls-aside--warning">Nachdem Sie dieses Dialogfeld geschlossen haben, können Sie dieses Client-Geheimnis nicht erneut abrufen. Wenn Sie es verlieren, müssen Sie ein neues erstellen.</aside>
+      </li>
+    </ol>
+    <h3>Das Zugriffstoken</h3>
+    <p>Das Zugriffstoken wird mithilfe der Clientanmeldeinformationen von einer anderen Brightcove-API abgerufen. Sie können dies selbst tun, aber auch hier verwendet jedes der im vorherigen Abschnitt aufgeführten Tools Ihre Client-Anmeldeinformationen, holt das Zugriffstoken für Sie und fügt es in den Anforderungsheader ein, der mit Ihrer Analytics-API-Anforderung gesendet wurde.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="API_request">Die Analytics-API-Anforderung</h2>
+    <p>Hier ist die Form der Analytics-API-Anforderung:</p>
+    <pre><code class="language-http" translate="No">http://analytics.api.brightcove.com/v1/data?accounts=<span class="bcls-input">{account1_id,account2_id}</span>
+&from=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&to=<span class="bcls-highlight">{yyyy-mm-dd}</span>
+&dimensions=viewer,video,country,city,region,device_type,protocol
+&fields=video,video.name,viewer,country,region,city,device_type,time,video_view,video_percent_viewed,video_seconds_viewed
+&sort=-video_view&limit=20&format=csv</code></pre>
+    <aside class="bcls-aside bcls-aside--information">Beachten Sie, dass die Anfrage-URL keine Zeilenumbrüche enthalten sollte! Zeilenumbrüche werden hier zur besseren Lesbarkeit hinzugefügt.</aside>
+    <h3>Erforderliche Parameter</h3>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Erforderliche Parameter</caption>
+      <thead class="bcls-table__head">
+          <tr>
+              <th>Parameter</th>
+              <th>Erforderliche Werte</th>
+              <th>Optionale Werte</th>
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+              <td><code translate="no">Konten</code></td>
+              <td>eine oder mehrere Konto-IDs</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td><code translate="no">Maße</code></td>
+              <td>
+                <ul>
+                  <li><code translate="no">Betrachter</code></li>
+                  <!-- <li><code translate="no">application</code></li> -->
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><code translate="no">Konto</code></li>
+                  <li><code translate="no">Video</code></li>
+                  <li><code translate="no">Land</code></li>
+                  <li><code translate="no">Region</code></li>
+                  <li><code translate="no">stadt</code></li>
+                  <li><code translate="no">device_type</code></li>
+                  <li><code translate="no">Protokoll</code></li>
+                </ul>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  <p>Sehen <a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#params">Parameter</a> Für einige zusätzliche optionale Parameter, mit denen Sie den Datumsbereich festlegen, die Ergebnisse sortieren, das Antwortformat festlegen usw. können.</p>
+
+  </section>
+  <section class="bcls-section">
+    <h2 id="where_filters">Wo Filter</h2>
+    <p>Sie können die Ergebnisse mit der filtern <code translate="no">wo</code> Parameter. Sehen <a href="https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#filterValues">Wo Filter</a> für Details</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="fields">Felder</h2>
+    <h3>Wird direkt vom Spieler gesammelt</h3>
+    <ul>
+      <li><code translate="no">betrachter</code>: Ereignisanzeige (SSO-ID oder Geräte-ID oder eindeutiger String basierend auf User-Agent und IP), entnommen aus dem <code translate="no">Benutzer</code> Gebiet</li>
+      <!-- <li><code translate="no">application</code>: virtual event experience id, if null default value = <code translate="no">account_id</code></li> -->
+      <li><code translate="no">time</code>: Zeitstempel des letzten erhaltenen Ereignisses</li>
+      <li><code translate="no">Video</code></li>
+      <li><code translate="no">Land</code></li>
+      <li><code translate="no">Region</code></li>
+      <li><code translate="no">stadt</code></li>
+      <li><code translate="no">device_type</code></li>
+    </ul>
+    <h3>Aggregierte Metriken</h3>
+    <ul>
+      <li><code translate="no">video_view</code>: Die Gesamtzahl, wie <code translate="no">video_view vom Player gesendet</code> wurde (beachten Sie, dass <code translate="no">video_view</code> <strong>nicht</strong> wird gesendet, wenn der Betrachter ein Video pausiert und neu startet oder das Video mehrmals ansieht, ohne die Seite zu aktualisieren)</li>
+    </ul>
+    <h3>Berechnete Felder</h3>
+    <ul>
+      <li>
+        <code translate="no">video_seconds_viewed</code>:
+        <ul>
+          <li>Höchster Bereichswert, der von der Collector-API unabhängig von der Reihenfolge empfangen wird</li>
+          <li>Beachten Sie, dass Ereignisse, die Bereiche über 20 Sekunden beschreiben, vom Analytics-System verworfen werden. Dies kann zu einem ungenauen Wert führen, wenn der Player nicht richtig instrumentiert wurde, um Bereiche von 20 Sekunden oder weniger zu senden - siehe <a href="https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html">Überblick: Datenerfassungs-API</a></li>
+        </ul>
+      </li>
+      <li><code translate="no"></code> video_percent_view:video_seconds_viewed/video_duration *100 (dieser Wert fehlt oder ist ungenau, wenn die Videodauer nicht an den Datensammelpunkt gesendet wurde)</li>
+      <li><code translate="no">video_engagement_xx</code>: Die Gesamtzahl der Aufrufe beim xx video_percent_viewt (xx = 1, 25, 50, 75 oder 100)</li>
+    </ul>
+    <details>
+      <summary>Beispiel-API-Antwort (JSON)</summary>
+<pre><code class="language-json" translate="no">{ 4 "item_count": 1, 5 "items": [ 6 { 7 "viewer": "test@brightcove.com", 8 "country": "GB", 9 "video_seconds_viewed": 253, 10 "city": "London", 11 "video_percent_viewed": 527.08, 12 "device_type": "other", 13 "video": "70701475639202", 14 "video_view": 46, 15 "region": "GB-ENG" 16 } 17], 18 „Zusammenfassung“: { 19 "video_seconds_viewed": 253, 20 "video_percent_viewed": 527.08, 21 "video_view": 46 22 } 23}</code></pre>
+    </details>
+  </section>
+</article> <!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Seiteninhalt</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="last-updated">
+  Seite zuletzt aktualisiert am 14 Feb 2022
+</div>
+
+
+ <footer class="bcls-footer" role="contentinfo">
+  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+        <img src="https://support.brightcove.com/site-assets/images/site/SVG/COVE004_Brightcove_Logo_093020_RGB_KO.svg" class="bc-footer-logo" alt="Brightcove">
+
+        <h2>Brightcove-Unterstützung</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">Systemstatus</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktieren Sie Support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Dokumentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Ausbildung</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Online Kurse</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">Melden Sie sich für einen Kurs an</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Brightcove Universität</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Helle Bucht</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">Brightcove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Kontaktiere uns</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove Inc. Alle Rechte vorbehalten.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Privatsphäre</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Terms &amp; amp; Bedingungen</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+      
+  var searchBox = sajari.init({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }); searchBox("sub", "pipeline.search-sent", Funktion (_, Abfrage) { window.location = "/search.html?q=" + encodeURIComponent(query.q); });
+  
+
+</script>   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <script>
+  feder.replace()
+</script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__seitenzahl—current.css-so0ov7 { background-color: lightblue; } div.sj-tabs__tab { margin-top: 3rem; margin-left: .3rem; border-top-left-radius: .4rem; border-top-right-radius: .4rem; background-color:#e8e8e8; } { border-bottom-color: crimson; background-color: #f8f8f8; } div.sj-tabs__tabs__tabs__tabs__tabs__tabs__tabs__tabs__tabs__tab div.sj-result__description.css-p9jvyt { font-size: 1rem; } .sj-result__text. css-31l7gp h3 { color: navy; font-size: 1.4rem; }
+    </style>
+
+</body>
+
+</html> 
